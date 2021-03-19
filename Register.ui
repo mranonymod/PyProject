@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>720</height>
+    <width>1082</width>
+    <height>798</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -72,82 +72,19 @@ color:#717072;
 border-bottom:1px solid #717072;
 
 }
-#label_4 ,#label_5{
+#label_4 ,#label_5 , #label_6 ,#label_7{
 font-size:18px;
 }
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string notr="true">*{
-font-family: 'Open Sans', sans-serif;
-font-size:23px;
-}
-
-#Form{
-	background-image: url(:/images/nightsky.jpg);
-}
-QFrame{
-background:#1e2833;
-border-radius:15px;
-}
-#pushButton{
-background:#1df2ef;
-border-radius:15px;
-}
-#pushButton:hover{
-background:#fffff2;
-}
-#pushButton_2{
-background:#1df2ef;
-border-radius:15px;
-}
-#pushButton_2:hover{
-background:#fffff2;
-}
-
-#pushButton_3{
-background:#DB4437;
-border-radius:15px;
-}
-#pushButton_3:hover{
-background:#fffff2;
-}
-#toolButton{
-background:#1df2ef;
-color:white;
-border-radius:60px;
-}
-#toolButton:hover{
-background:#fffff2;
-}
-QLabel{
-color:#fffff2;
-}
-QPushButton:hover{
-background: #fffff2;
-letter-spacing: 1px;
-
-}
-QLineEdit{
-background:transparent;
-border:none;
-color:#717072;
-border-bottom:1px solid #717072;
-
-}
-#label_4 ,#label_5{
-font-size:18px;
-}
-</string>
-   </property>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>90</y>
+      <x>310</x>
+      <y>120</y>
       <width>450</width>
-      <height>541</height>
+      <height>531</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -160,8 +97,8 @@ font-size:18px;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>80</y>
-       <width>81</width>
+       <y>40</y>
+       <width>101</width>
        <height>41</height>
       </rect>
      </property>
@@ -175,20 +112,7 @@ font-size:18px;
       </font>
      </property>
      <property name="text">
-      <string>Login</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>310</y>
-       <width>181</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Login</string>
+      <string>Register</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
@@ -197,8 +121,8 @@ font-size:18px;
      </property>
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>310</y>
+       <x>20</x>
+       <y>470</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -210,66 +134,17 @@ font-size:18px;
       <string>Register</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>470</y>
-       <width>391</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="PyProject/resources.qrc">
-       <normaloff>:/images/google-plus.jpg</normaloff>:/images/google-plus.jpg</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>40</width>
-       <height>40</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>380</y>
-       <width>111</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Or</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>410</y>
-       <width>161</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Sign-In with</string>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>170</y>
+       <y>140</y>
        <width>381</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>bruh</string>
+      <string/>
      </property>
      <property name="placeholderText">
       <string>User Name</string>
@@ -279,13 +154,13 @@ font-size:18px;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>250</y>
+       <y>320</y>
        <width>381</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>bruh</string>
+      <string/>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
@@ -298,7 +173,7 @@ font-size:18px;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>130</y>
+       <y>100</y>
        <width>131</width>
        <height>31</height>
       </rect>
@@ -319,7 +194,7 @@ font-size:18px;
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>220</y>
+       <y>280</y>
        <width>131</width>
        <height>31</height>
       </rect>
@@ -328,12 +203,81 @@ font-size:18px;
       <string>Password</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>410</y>
+       <width>381</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Confirm Password</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>370</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Confirm Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>230</y>
+       <width>381</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>190</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Open Sans</family>
+       <pointsize>-1</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QToolButton" name="toolButton">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>20</y>
+      <x>470</x>
+      <y>60</y>
       <width>120</width>
       <height>120</height>
      </rect>
@@ -343,7 +287,7 @@ font-size:18px;
     </property>
     <property name="icon">
      <iconset resource="PyProject/resources.qrc">
-      <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
+      <normaloff>:/images/register.jpg</normaloff>:/images/register.jpg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -358,7 +302,7 @@ font-size:18px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1080</width>
+     <width>1082</width>
      <height>34</height>
     </rect>
    </property>
