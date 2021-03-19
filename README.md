@@ -7,3 +7,7 @@ How to Compile resources.qrc in main.py?
 ```
 pyrcc5 resources.qrc -o resources_rc.py
 ```
+then in main.py
+```python
+import resources_rc
+```
