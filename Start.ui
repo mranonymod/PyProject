@@ -21,32 +21,32 @@ font-size:23px;
 
 QWidget{
 	
-	background-image: url(:/images/nightsky.jpg);
+	background-image: url(:/images/nightsky.png);
 }
 QFrame{
 background:#1e2833;
 border-radius:15px;
 }
-#pushButton{
+#LoginButton{
 background:#1df2ef;
 border-radius:15px;
 }
-#pushButton:hover{
+#LoginButton:hover{
 background:#fffff2;
 }
-#pushButton_2{
+#RegisterButton{
 background:#1df2ef;
 border-radius:15px;
 }
-#pushButton_2:hover{
+#RegisterButton:hover{
 background:#fffff2;
 }
 
-#pushButton_3{
+#GPButton{
 background:#DB4437;
 border-radius:15px;
 }
-#pushButton_3:hover{
+#GPButton:hover{
 background:#fffff2;
 }
 #toolButton{
@@ -144,8 +144,8 @@ font-size:18px;
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>90</y>
+      <x>270</x>
+      <y>70</y>
       <width>450</width>
       <height>541</height>
      </rect>
@@ -178,7 +178,7 @@ font-size:18px;
       <string>Login</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="LoginButton">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -191,7 +191,7 @@ font-size:18px;
       <string>Login</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="RegisterButton">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -210,7 +210,7 @@ font-size:18px;
       <string>Register</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="GPButton">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -219,12 +219,15 @@ font-size:18px;
        <height>51</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="PyProject/resources.qrc">
-       <normaloff>:/images/google-plus.jpg</normaloff>:/images/google-plus.jpg</iconset>
+      <iconset>
+       <normaloff>images/google-plus.png</normaloff>images/google-plus.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -342,7 +345,7 @@ font-size:18px;
      <string>...</string>
     </property>
     <property name="icon">
-     <iconset resource="PyProject/resources.qrc">
+     <iconset resource="resources.qrc">
       <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
     </property>
     <property name="iconSize">
@@ -366,7 +369,7 @@ font-size:18px;
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="PyProject/resources.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
