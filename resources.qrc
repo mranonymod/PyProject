@@ -1,13 +1,14 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
     <file>images/blusky.jpg</file>
-    <file>images/google-plus.png</file>
+    <file>images/google-plus.jpg</file>
     <file>images/icon.png</file>
     <file>images/dusksky.jpg</file>
     <file>images/starrysky.jpg</file>
     <file>images/Hydrogen.jpg</file>
     <file>images/nightday.jpg</file>
     <file>images/bg1.png</file>
-    <file>images/nightsky.png</file>
+    <file>images/nightsky.jpg</file>
+    <file>images/register.jpg</file>
 </qresource>
 </RCC>
