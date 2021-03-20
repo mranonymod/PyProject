@@ -1,46 +1,47 @@
 import sys
 import resources_rc
-from PyQt5 import QtWidgets as qtw
+from PyQt5 import QtWidgets 
 from PyQt5 import QtCore  
-from PyQt5 import QtGui as qtg 
+from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.uic import loadUi
-Ui_Start,baseClass=uic.loadUiType('Start.ui')
-Ui_Login,baseClass2=uic.loadUiType('Login.ui')
+Ui_Form,baseClass=uic.loadUiType('Start.ui')
+Ui_Register,baseClass2=uic.loadUiType('Register.ui')
 
 class Start(baseClass):
     sw=QtCore.pyqtSignal()
     def __init__(self, *arg, **kwargs):
         super().__init__(*arg,**kwargs)
         #code start
-        self.ui=Ui_Start()
+        self.ui=Ui_Form()
         self.ui.setupUi(self)
+        self.ui.RegisterButton.clicked.connect(self.closeW)
         #code end
     def closeW(self):
         self.sw.emit()
-class Login(baseClass2):
+class Register(baseClass2):
     def __init__(self, *arg, **kwargs):
         super().__init__(*arg,**kwargs)
         #code start
-        self.ui=Ui_Login()
+        self.ui=Ui_Register()
         self.ui.setupUi(self)
         #code end
 
 class Controller:
 
-    def __init__(self):
-        pass 
+    def __init__(self, *arg, **kwargs):
+        super().__init__(*arg,**kwargs)
     def show_start(self):
         self.window=Start(windowTitle='Choose')
-        self.window.sw.connect(self.show_login)
+        self.window.sw.connect(self.show_register)
         self.window.show()
-    def show_login(self):
-        self.login = Login()
+    def show_register(self):
+        self.reg = Register()
         self.window.close()
-        self.login.show()
+        self.reg.show()
         
 def main():
-    app = qtw.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     w=Controller()
     w.show_start()
     sys.exit(app.exec_())
