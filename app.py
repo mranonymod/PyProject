@@ -15,9 +15,24 @@ class Start(baseClass):
         #code start
         self.ui=Ui_Form()
         self.ui.setupUi(self)
-        self.ui.RegisterButton.clicked.connect(self.closeW)
+        self.label=QtWidgets.QLabel('bruh')
+        self.ui.LoginButton.clicked.connect(self.login)
+        self.ui.RegisterButton.clicked.connect(self.register)
+        self.ui.GPButton.clicked.connect(self.gplogin)
         #code end
-    def closeW(self):
+    def login(self):
+        self.username=self.ui.UsernameText.text()
+        self.password=self.ui.PasswordText.text()
+        if self.username=="bruh" and self.password=="bruh":
+            self.close()
+            self.label.show()
+            print("bruh")
+    def gplogin(self):
+        self.close()
+        self.label.setText("haa yeh bhi kr lete hai")
+        self.label.show()
+        print("bruh")
+    def register(self):
         self.sw.emit()
 class Register(baseClass2):
     def __init__(self, *arg, **kwargs):
