@@ -262,7 +262,7 @@ font-size:18px;
       <string>Sign-In with</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="UsernameText">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -278,7 +278,7 @@ font-size:18px;
       <string>User Name</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="PasswordText">
      <property name="geometry">
       <rect>
        <x>30</x>
