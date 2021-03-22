@@ -115,7 +115,7 @@ font-size:18px;
       <string>Register</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="RegisterButton">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -134,7 +134,7 @@ font-size:18px;
       <string>Register</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="UsernameText">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -150,7 +150,7 @@ font-size:18px;
       <string>User Name</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="PasswordText">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -203,7 +203,7 @@ font-size:18px;
       <string>Password</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="ConfirmPasswordText">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -235,7 +235,7 @@ font-size:18px;
       <string>Confirm Password</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="NameText">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -286,8 +286,8 @@ font-size:18px;
      <string>...</string>
     </property>
     <property name="icon">
-     <iconset resource="PyProject/resources.qrc">
-      <normaloff>:/images/register.jpg</normaloff>:/images/register.jpg</iconset>
+     <iconset>
+      <normaloff>images/register.jpg</normaloff>images/register.jpg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -310,7 +310,7 @@ font-size:18px;
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="PyProject/resources.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
