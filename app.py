@@ -5,8 +5,9 @@ from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.uic import loadUi
+from register import Register
+from encrypt import *
 Ui_Form,baseClass=uic.loadUiType('Start.ui')
-Ui_Register,baseClass2=uic.loadUiType('Register.ui')
 
 class Start(baseClass):
     sw=QtCore.pyqtSignal()
@@ -21,12 +22,11 @@ class Start(baseClass):
         self.ui.GPButton.clicked.connect(self.gplogin)
         #code end
     def login(self):
-        self.username=self.ui.UsernameText.text()
-        self.password=self.ui.PasswordText.text()
-        if self.username=="bruh" and self.password=="bruh":
-            self.close()
-            self.label.show()
-            print("bruh")
+        self.username=enc(self.ui.UsernameText.text())
+        self.username.check()
+        self.password=enc(self.ui.PasswordText.text())
+        self.password.check()
+
     def gplogin(self):
         self.close()
         self.label.setText("haa yeh bhi kr lete hai")
@@ -34,13 +34,7 @@ class Start(baseClass):
         print("bruh")
     def register(self):
         self.sw.emit()
-class Register(baseClass2):
-    def __init__(self, *arg, **kwargs):
-        super().__init__(*arg,**kwargs)
-        #code start
-        self.ui=Ui_Register()
-        self.ui.setupUi(self)
-        #code end
+
 
 class Controller:
 
