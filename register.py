@@ -5,6 +5,8 @@ from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.uic import loadUi
+from registerdb import *
+from hasher import *
 from validator import *
 
 Ui_Register,baseClass2=uic.loadUiType('Register.ui')
@@ -22,7 +24,9 @@ class Register(baseClass2):
         if self.ui.NameText.text() and self.ui.UsernameText.text() and self.ui.PasswordText.text() and self.ui.ConfirmPasswordText.text() != "" :
             if self.ui.PasswordText.text() == self.ui.ConfirmPasswordText.text():
                 if password_check(self.ui.PasswordText.text()):
-                    print ("bete moj krdi wapas se")
+                    email=self.ui.UsernameText.text()+"@gmail.com"
+                    password=hashit(self,self.ui.PasswordText.text())
+                    reg(self,self.ui.UsernameText.text(),self.ui.NameText.text(),email,password)
             else:
                 print ("password and confirm password fields should be same")
         else:

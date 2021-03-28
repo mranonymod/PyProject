@@ -21,17 +21,17 @@ font-size:23px;
 
 QWidget{
 	
-	background-image: url(:/images/nightsky.jpg);
+	background-image: url(images/nightsky.jpg);
 }
 QFrame{
 background:#1e2833;
 border-radius:15px;
 }
-#pushButton{
+#RegisterButton{
 background:#1df2ef;
 border-radius:15px;
 }
-#pushButton:hover{
+#RegisterButton:hover{
 background:#fffff2;
 }
 #pushButton_2{
