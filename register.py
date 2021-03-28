@@ -25,7 +25,7 @@ class Register(baseClass2):
             if self.ui.PasswordText.text() == self.ui.ConfirmPasswordText.text():
                 if password_check(self.ui.PasswordText.text()):
                     email=self.ui.UsernameText.text()+"@gmail.com"
-                    password=hashit(self,self.ui.PasswordText.text())
+                    password=hashit(self.ui.PasswordText.text())
                     reg(self,self.ui.UsernameText.text(),self.ui.NameText.text(),email,password)
             else:
                 print ("password and confirm password fields should be same")
