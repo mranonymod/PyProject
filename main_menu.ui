@@ -422,7 +422,7 @@ background-position:center left;</string>
            </rect>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="Personal_Page">
            <widget class="QFrame" name="page1_frame">
@@ -548,6 +548,9 @@ background:#fffff2;
               </property>
               <property name="text">
                <string/>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
               </property>
               <property name="placeholderText">
                <string>Password</string>
@@ -808,6 +811,9 @@ background:#fffff2;
                <property name="text">
                 <string/>
                </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
                <property name="placeholderText">
                 <string>Password</string>
                </property>
@@ -1067,6 +1073,9 @@ background:#fffff2;
                </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
                </property>
                <property name="placeholderText">
                 <string>Password</string>
