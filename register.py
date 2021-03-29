@@ -12,6 +12,7 @@ from validator import *
 Ui_Register,baseClass2=uic.loadUiType('Register.ui')
 
 class Register(baseClass2):
+    sw=QtCore.pyqtSignal()
     def __init__(self, *arg, **kwargs):
         super().__init__(*arg,**kwargs)
         #code start
@@ -26,11 +27,14 @@ class Register(baseClass2):
                 if password_check(self.ui.PasswordText.text()):
                     email=self.ui.UsernameText.text()+"@gmail.com"
                     password=hashit(self.ui.PasswordText.text())
-                    reg(self,self.ui.UsernameText.text(),self.ui.NameText.text(),email,password)
+                    self.i=Reg(self.ui.UsernameText.text(),self.ui.NameText.text(),email,password)
+                    if(self.i.insert()):
+                        self.sw.emit()
             else:
                 print ("password and confirm password fields should be same")
         else:
             print('Fill all the details')
+
 
                 
     
