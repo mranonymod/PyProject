@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
                                   "}\n"
                                   "")
         icon = QIcon()
-        icon.addFile(u":/images/images/Menu.png",
+        icon.addFile(u"images/Menu.png",
                      QSize(), QIcon.Normal, QIcon.Off)
         self.toggle.setIcon(icon)
         self.toggle.setIconSize(QSize(24, 24))
@@ -150,7 +150,7 @@ class Ui_MainWindow(object):
         self.Shared.setObjectName(u"Shared")
         self.Shared.setGeometry(QRect(0, 90, 141, 91))
         self.Shared.setMinimumSize(QSize(100, 0))
-        self.Shared.setStyleSheet(u"background-image: url(:/images/images/Shared.png);\n"
+        self.Shared.setStyleSheet(u"background-image: url(images/Shared.png);\n"
                                   "background-repeat:none;\n"
                                   "padding-left:30px;\n"
                                   "background-position:center left;")
@@ -158,7 +158,7 @@ class Ui_MainWindow(object):
         self.Personal.setObjectName(u"Personal")
         self.Personal.setGeometry(QRect(0, 0, 141, 91))
         self.Personal.setMinimumSize(QSize(0, 0))
-        self.Personal.setStyleSheet(u"background-image: url(:/images/images/personal.png);\n"
+        self.Personal.setStyleSheet(u"background-image: url(images/personal.png);\n"
                                     "background-repeat:none;\n"
                                     "padding-left:30px;\n"
                                     "background-position:center left;")
@@ -166,14 +166,14 @@ class Ui_MainWindow(object):
         self.Banking.setObjectName(u"Banking")
         self.Banking.setGeometry(QRect(0, 180, 141, 91))
         self.Banking.setMinimumSize(QSize(100, 0))
-        self.Banking.setStyleSheet(u"background-image: url(:/images/images/banking.png);\n"
+        self.Banking.setStyleSheet(u"background-image: url(images/banking.png);\n"
                                    "background-repeat:none;\n"
                                    "padding-left:30px;\n"
                                    "background-position:center left;")
         self.Signout = QPushButton(self.left_menu_top_buttons)
         self.Signout.setObjectName(u"Signout")
         self.Signout.setGeometry(QRect(0, 450, 141, 91))
-        self.Signout.setStyleSheet(u"background-image: url(:/images/images/exit.png);\n"
+        self.Signout.setStyleSheet(u"background-image: url(images/exit.png);\n"
                                    "background-repeat:none;\n"
                                    "padding-left:30px;\n"
                                    "background-position:center left;")
@@ -198,7 +198,7 @@ class Ui_MainWindow(object):
         self.page1_frame.setGeometry(QRect(-1, -1, 1021, 571))
         self.page1_frame.setStyleSheet(u"#page1_frame{\n"
                                        "	\n"
-                                       "	background-image: url(:/images/images/blusky.jpg);\n"
+                                       "	background-image: url(images/blusky.jpg);\n"
                                        "}")
         self.page1_frame.setFrameShape(QFrame.StyledPanel)
         self.page1_frame.setFrameShadow(QFrame.Raised)
@@ -292,7 +292,7 @@ class Ui_MainWindow(object):
         self.page2_frame.setObjectName(u"page2_frame")
         self.page2_frame.setGeometry(QRect(0, 0, 1021, 571))
         self.page2_frame.setStyleSheet(u"#page2_frame{\n"
-                                       "	background-image: url(:/images/images/blusky.jpg);\n"
+                                       "	background-image: url(images/blusky.jpg);\n"
                                        "}")
         self.page2_frame.setFrameShape(QFrame.StyledPanel)
         self.page2_frame.setFrameShadow(QFrame.Raised)
@@ -386,7 +386,7 @@ class Ui_MainWindow(object):
         self.page3_frame.setObjectName(u"page3_frame")
         self.page3_frame.setGeometry(QRect(0, -10, 1021, 571))
         self.page3_frame.setStyleSheet(u"#page3_frame{\n"
-                                       "	background-image: url(:/images/images/blusky.jpg);\n"
+                                       "	background-image: url(images/blusky.jpg);\n"
                                        "\n"
                                        "}")
         self.page3_frame.setFrameShape(QFrame.StyledPanel)
