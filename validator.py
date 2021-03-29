@@ -8,7 +8,7 @@ def password_check(passwd):
         val = False
           
     if len(passwd) > 20: 
-        print('length should be not be greater than 8') 
+        print('length should be not be greater than 20') 
         val = False
           
     if not any(char.isdigit() for char in passwd): 
