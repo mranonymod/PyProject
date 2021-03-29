@@ -21,7 +21,7 @@ font-size:23px;
 
 QWidget{
 	
-	background-image: url(:/images/nightsky.jpg);
+	background-image: url(images/nightsky.jpg);
 }
 QFrame{
 background:#1e2833;
@@ -227,7 +227,8 @@ font-size:18px;
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>images/google-plus.jpg</normaloff>images/google-plus.jpg</iconset>
+       <normaloff>images/google-plus.jpg</normaloff>
+       <normalon>:/images/google-plus.jpg</normalon>images/google-plus.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -345,7 +346,7 @@ font-size:18px;
      <string>...</string>
     </property>
     <property name="icon">
-     <iconset resource="resources.qrc">
+     <iconset>
       <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
     </property>
     <property name="iconSize">
