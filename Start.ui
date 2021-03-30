@@ -347,7 +347,7 @@ font-size:18px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
+      <normaloff>images/icon.png</normaloff>images/icon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
