@@ -1,29 +1,29 @@
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime,
+                            QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase,
+                           QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
-from PyQt5 import uic
-from ui_functions import *
-from PyQt5.uic import loadUi
-
 
 # GUI FILE
-Ui_Main,baseClass3=uic.loadUiType('main_menu.ui')
+from ui_main_menu import Ui_MainWindow
 
 # IMPORT FUNCTIONS
 from ui_functions import *
 
-class MainWindow(baseClass3):
-    def __init__(self, *arg, **kwargs):
-        super().__init__(*arg,**kwargs)
-        self.ui=Ui_Main()
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
         ## TOGGLE/BURGUER MENU
         ########################################################################
-        
-        self.ui.toggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, True))
+        self.ui.toggle.clicked.connect(
+            lambda: UIFunctions.toggleMenu(self, 150, True))
 
         ## PAGES
         ########################################################################
@@ -36,4 +36,6 @@ class MainWindow(baseClass3):
 
         # PAGE 3
         self.ui.Banking.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Banking_Page))
-        
+
+
+

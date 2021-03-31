@@ -5,7 +5,7 @@ CREATE TABLE Users(
 	Username VARCHAR(64) PRIMARY KEY,
 	Name VARCHAR(128),
 	Email VARCHAR(128) NOT NULL UNIQUE,
-	Password VARCHAR(64)
+	Password VARCHAR(100)
 ); 
 
 CREATE TABLE ServicesR (
