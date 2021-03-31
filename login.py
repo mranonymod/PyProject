@@ -10,7 +10,7 @@ from hasher import *
 from gplus import *
 
 Ui_Form,baseClass=uic.loadUiType('Start.ui')
-
+Ui_Msg,baseClass1=uic.loadUiType('ErrorTemplates/Message.ui')
 class Start(baseClass):
     rw=QtCore.pyqtSignal()
     mw=QtCore.pyqtSignal(str)
@@ -29,7 +29,7 @@ class Start(baseClass):
         if(logincheck):
             self.mw.emit(self.ui.UsernameText.text())
         else:
-            print("wrong password/username ")
+            self.error=Msg("Username or Password incorrect").exec_()
     def gplogin(self):
         self.log=glogin()
         self.close()
@@ -38,3 +38,16 @@ class Start(baseClass):
         print("bruh")
     def register(self):
         self.rw.emit()
+
+class Msg(baseClass1):
+    def __init__(self, str):
+        super(Msg,self).__init__()
+        #code start
+        self.str = str
+        self.ui=Ui_Msg()
+        self.ui.setupUi(self)
+        self.ui.OkBtn.clicked.connect(self.done)
+        self.ui.CancelBtn.clicked.connect(self.done)
+        self.ui.Err_msg.setText(self.str)
+
+        

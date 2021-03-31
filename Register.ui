@@ -22,7 +22,7 @@ font-size:23px;
 QWidget{
 	
 	
-	background-image: url(:/images/images/nightsky.jpg);
+	background-image: url(images/nightsky.jpg);
 }
 QFrame{
 background:#1e2833;
@@ -329,7 +329,7 @@ letter-spacing: 1px;}</string>
     </property>
     <property name="icon">
      <iconset resource="resources.qrc">
-      <normaloff>:/images/images/back.png</normaloff>:/images/images/back.png</iconset>
+      <normaloff>images/back.png</normaloff>images/back.png</iconset>
     </property>
     <property name="iconSize">
      <size>

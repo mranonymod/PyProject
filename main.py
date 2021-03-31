@@ -7,8 +7,13 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFo
                            QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 from PySide2.QtWidgets import QLabel
+
+from PyQt5 import uic
+from PyQt5.uic import loadUi
+
 # GUI FILE
 from ui_main_menu import Ui_MainWindow
+Ui_Success,baseClass4=uic.loadUiType('ErrorTemplates/Message.ui')
 
 # IMPORT FUNCTIONS
 from ui_functions import *
@@ -54,15 +59,38 @@ class MainWindow(QMainWindow):
         self.service=self.ui.per_Acc_name.text()
         self.AccUsrName=self.ui.per_username.text()
         self.add=db(self.username)
-        self.add.add(self.AccUsrName,self.Pwd,self.service)
-        self.ui.per_password.clear()
-        self.ui.per_Acc_name.clear()
-        self.ui.per_username.clear()
+        if(self.add.add(self.AccUsrName,self.Pwd,self.service)):
+            self.ui.per_password.clear()
+            self.ui.per_Acc_name.clear()
+            self.ui.per_username.clear()
+            self.success=Success().exec_()
+        else:
+            self.failed=Failed().exec_()
+
     def encrypt(self,str):
         self.key=db(self.username).getkey()
         self.str=str
         self.pwd=AESCipher(self.key)
         return self.pwd.encrypt(str)
+
+
+class Success(baseClass4):
+    def __init__(self, *arg, **kwargs):
+        super().__init__(*arg,**kwargs)
+        #code start
+        self.ui=Ui_Success()
+        self.ui.setupUi(self)
+        self.ui.OkBtn.clicked.connect(self.done)
+        self.ui.CancelBtn.clicked.connect(self.done)
+
+class Failed(baseClass4):
+    def __init__(self, *arg, **kwargs):
+        super().__init__(*arg,**kwargs)
+        #code start
+        self.ui=Ui_Success()
+        self.ui.setupUi(self)
+        self.ui.OkBtn.clicked.connect(self.done)
+        self.ui.CancelBtn.clicked.connect(self.done)
         
 
 
