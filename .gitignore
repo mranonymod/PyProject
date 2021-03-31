@@ -1,2 +1,8 @@
 resources.qrc
 credentials.json
+encryptcopy.py
+token.json
+apptemp.py
+encrypt2.py
+__pycache__/
+
