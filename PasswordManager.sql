@@ -18,25 +18,28 @@ CREATE TABLE Passwords (
 	Username VARCHAR(64), FOREIGN KEY (`Username`) REFERENCES `Users` (`Username`),
     AccUserName VARCHAR(64) NOT NULL,
 	Service VARCHAR(128) NOT NULL , FOREIGN KEY (`Service`) REFERENCES `ServicesR`(`Services`),
-    SharedID INT ,
+    SharedID INT UNIQUE ,
 	Passwords VARCHAR(256) NOT NULL,
     SetOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
 ); 
 
 CREATE TABLE SHDGRP(
-    SharedID INT PRIMARY KEY,
-    ServiceID INT, FOREIGN KEY (`ServiceID`) REFERENCES `ServicesR`(`ServiceID`),
-    Services VARCHAR(128), FOREIGN KEY (`Services`) REFERENCES `ServicesR`(`Services`),
+    SharedID INT,FOREIGN KEY(`SharedID`) REFERENCES `Passwords`(`SharedID`),
     Username VARCHAR(64) ,FOREIGN KEY (`Username`) REFERENCES `Users` (`Username`)
 );
-ALTER TABLE Passwords
-ADD constraint SharedID
-FOREIGN KEY (`SharedID`) REFERENCES `SHDGRP` (`SharedID`);
+
 
 INSERT INTO Users values ('Yash18','Yash','mryash018@gmail.com','Yash');
+INSERT INTO Users values('Eren','Eren','eren@gmail.com','Eren');
+INSERT INTO Users values ('bruh','bruh','bruh@gmail.com','408f31d86c6bf4a8aff4ea682ad002278f8cb39dc5f37b53d343e63a61f3cc4f');
 INSERT INTO ServicesR(Services) values ('NETFLIX');
-INSERT INTO Passwords(Username,AccUserName,Service,Passwords) values ('Yash18','YashNetflix','NETFLIX','Yashnflix');
+INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('Yash18','YashNetflix','NETFLIX','8989','Yashnflix');
+INSERT INTO SHDGRP VALUES ('8989','Yash18');
+INSERT INTO SHDGRP VALUES ('8989','Eren');
+INSERT INTO SHDGRP VALUES ('8989','bruh');
+
+
 
 SELECT * FROM Users;
 SELECT * FROM Passwords;

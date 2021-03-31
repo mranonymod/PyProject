@@ -1,5 +1,6 @@
 import sys
 import resources_rc
+import threading
 from PyQt5 import QtWidgets 
 from PyQt5 import QtCore  
 from PyQt5.QtWidgets import QWidget,QLabel
@@ -20,21 +21,20 @@ class LoadingScreen(QWidget):
         self.label_animation=QLabel(self)
         self.movie=QMovie("images/loading.gif")
         self.label_animation.setMovie(self.movie)
-        self.startAnimation()
-        self.show()
         timer=QTimer(self)
         timer.singleShot(3000,self.stopAnimation)
+        self.startAnimation()
     def startAnimation(self):
         self.movie.start()
+        self.show()
     def stopAnimation(self):
         self.movie.stop()
         self.close()
-class Controller:
-
+class Controller(QObject):
     def __init__(self, *arg, **kwargs):
         super().__init__(*arg,**kwargs)
-    def show_start(self):
         self.window=Start(windowTitle='Choose')
+    def show_start(self):
         self.window.rw.connect(self.show_register)
         self.window.mw.connect(self.show_main)
         self.window.show()
@@ -43,12 +43,13 @@ class Controller:
         self.reg.sw.connect(self.start2)
         self.window.close()
         self.reg.show()
-    def show_main(self):
+    def show_main(self,str):
         self.window.close()
-        self.main=MainWindow()
-        self.main.show()
-    
-        
+        self.main=MainWindow(str)
+        self.main.setWindowTitle(f"Welcome {str}")
+        self.main.show() 
+    def load(self):
+        self.L=LoadingScreen()
     def start2(self):
         self.reg.close()
         self.window=Start(windowTitle='Choose')
