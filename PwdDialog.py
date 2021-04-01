@@ -5,7 +5,7 @@ Ui_Error2,baseClass2=uic.loadUiType('ErrorTemplates/PassDet.ui')
 
 class Error2(baseClass2):
     def __init__(self, *arg, **kwargs):
-        super().__init__(*arg,**kwargs)
+        super(Error2,self).__init__()
         #code start
         self.ui=Ui_Error2()
         self.ui.setupUi(self)

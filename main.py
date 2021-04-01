@@ -21,6 +21,7 @@ from ui_functions import *
 from addpasswordsDB import *
 from encrypt import AESCipher
 from validator import *
+from ViewPwdDB import *
 
 
 class MainWindow(QMainWindow):
@@ -48,6 +49,7 @@ class MainWindow(QMainWindow):
         self.ui.Banking.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.Banking_Page))
 
         self.ui.Enter.clicked.connect(self.check)
+        self.ui.view_pwd.clicked.connect(self.viewPwd)
 
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_Acc_name.text() and self.ui.per_username.text() != ""):
@@ -78,8 +80,17 @@ class MainWindow(QMainWindow):
         self.str=str
         self.pwd=AESCipher(self.key)
         return self.pwd.encrypt(str)
-
-        
+    def decrypt(self,str):
+        self.key=db(self.username).getkey()
+        self.str=str
+        self.pwd=AESCipher(self.key)
+        return self.pwd.decrypt(str)
+    def viewPwd(self):
+        self.get=viewPers(self.username)
+        if(self.get.find()):
+                    print(self.get.find())
+        else:
+            self.noUsr=Msg("No Passwords registered").exec_()
 
 
 
