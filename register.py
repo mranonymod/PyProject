@@ -8,8 +8,9 @@ from PyQt5.uic import loadUi
 from registerdb import *
 from hasher import *
 from validator import *
+from MsgDialog import Msg
 
-Ui_Register,baseClass=uic.loadUiType('Register.ui')
+Ui_Register,baseClass=uic.loadUiType('UI/Register.ui')
 Ui_Error2,baseClass2=uic.loadUiType('ErrorTemplates/PassDet.ui')
 Ui_Msg,baseClass1=uic.loadUiType('ErrorTemplates/Message.ui')
 class Register(baseClass):
@@ -52,14 +53,3 @@ class Error2(baseClass2):
         self.ui.setupUi(self)
         self.ui.OkBtn.clicked.connect(self.done)
         self.ui.CancelBtn.clicked.connect(self.done)
-class Msg(baseClass1):
-    def __init__(self, str):
-        super(Msg,self).__init__()
-        #code start
-        self.str = str
-        self.ui=Ui_Msg()
-        self.ui.setupUi(self)
-        self.ui.OkBtn.clicked.connect(self.done)
-        self.ui.CancelBtn.clicked.connect(self.done)
-        self.ui.Err_msg.setText(self.str)
-    

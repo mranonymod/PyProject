@@ -13,7 +13,7 @@ from PyQt5.uic import loadUi
 
 # GUI FILE
 from ui_main_menu import Ui_MainWindow
-Ui_Success,baseClass4=uic.loadUiType('ErrorTemplates/Message.ui')
+from MsgDialog import Msg
 
 # IMPORT FUNCTIONS
 from ui_functions import *
@@ -48,12 +48,13 @@ class MainWindow(QMainWindow):
         self.ui.Enter.clicked.connect(self.check)
 
     def check(self):
-        if(self.ui.checkBox.checkState()):
-            self.ppwd_add()
+        if(self.ui.per_password.text() and self.ui.per_Acc_name.text() and self.ui.per_username.text() != ""):
+            if(self.ui.checkBox.checkState()):
+                self.ppwd_add()
+            else:
+                self.check=Msg("Check The Box").exec_()
         else:
-            self.l4 = QLabel()
-            self.l4.setText("check the box")
-            self.l4.show()
+            self.fill=Msg("Fill all the Details").exec_()
     def ppwd_add(self):
         self.Pwd=self.encrypt(self.ui.per_password.text())
         self.service=self.ui.per_Acc_name.text()
@@ -63,9 +64,9 @@ class MainWindow(QMainWindow):
             self.ui.per_password.clear()
             self.ui.per_Acc_name.clear()
             self.ui.per_username.clear()
-            self.success=Success().exec_()
+            self.success=Msg("Password Stored").exec_()
         else:
-            self.failed=Failed().exec_()
+            self.failed=Msg("Service already exists").exec_()
 
     def encrypt(self,str):
         self.key=db(self.username).getkey()
@@ -73,24 +74,6 @@ class MainWindow(QMainWindow):
         self.pwd=AESCipher(self.key)
         return self.pwd.encrypt(str)
 
-
-class Success(baseClass4):
-    def __init__(self, *arg, **kwargs):
-        super().__init__(*arg,**kwargs)
-        #code start
-        self.ui=Ui_Success()
-        self.ui.setupUi(self)
-        self.ui.OkBtn.clicked.connect(self.done)
-        self.ui.CancelBtn.clicked.connect(self.done)
-
-class Failed(baseClass4):
-    def __init__(self, *arg, **kwargs):
-        super().__init__(*arg,**kwargs)
-        #code start
-        self.ui=Ui_Success()
-        self.ui.setupUi(self)
-        self.ui.OkBtn.clicked.connect(self.done)
-        self.ui.CancelBtn.clicked.connect(self.done)
         
 
 

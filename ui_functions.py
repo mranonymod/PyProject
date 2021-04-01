@@ -4,7 +4,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PyQt5 import uic
 from PyQt5.uic import loadUi
-Ui_Main_Menu,baseClass3=uic.loadUiType('main_menu.ui')
+Ui_Main_Menu,baseClass3=uic.loadUiType('UI/main_menu.ui')
 
 class UIFunctions(baseClass3):
 
