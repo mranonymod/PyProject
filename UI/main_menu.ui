@@ -171,8 +171,8 @@ background-color:rgb(85,255,255);
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/images/PyProject/images/Menu.png</normaloff>:/images/PyProject/images/Menu.png</iconset>
+                <iconset resource="../resources1.qrc">
+                 <normaloff>:/images/PyProject/UI/images/Menu.png</normaloff>:/images/PyProject/UI/images/Menu.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -318,7 +318,7 @@ background-color:rgb(85,255,255);
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/PyProject/images/Shared.png);
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/Shared.png);
 background-repeat:none;
 padding-left:50px;
 background-position:center left;</string>
@@ -343,7 +343,7 @@ background-position:center left;</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/PyProject/images/personal.png);
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/personal.png);
 background-repeat:none;
 padding-left:50px;
 background-position:center left;</string>
@@ -368,7 +368,7 @@ background-position:center left;</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/PyProject/images/banking.png);
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/banking.png);
 background-repeat:none;
 padding-left:50px;
 background-position:center left;</string>
@@ -387,7 +387,7 @@ background-position:center left;</string>
               </rect>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-image: url(:/images/PyProject/images/exit.png);
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/exit.png);
 background-repeat:none;
 padding-left:50px;
 background-position:center left;</string>
@@ -436,7 +436,7 @@ background-position:center left;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">#page1_frame{
-	background-image: url(:/images/D:/python things/PyProject/images/blusky.jpg);
+	background-image: url(:/images/PyProject/UI/images/blusky.jpg);
 }</string>
             </property>
             <property name="frameShape">
@@ -698,7 +698,7 @@ background-color:#fffff2;}</string>
              </property>
              <property name="styleSheet">
               <string notr="true">#page2_frame{
-	background-image: url(:/images/D:/python things/PyProject/images/blusky.jpg);
+	background-image: url(:/images/PyProject/UI/images/blusky.jpg);
 }</string>
              </property>
              <property name="frameShape">
@@ -961,7 +961,7 @@ background-color:#fffff2;}</string>
              </property>
              <property name="styleSheet">
               <string notr="true">#page3_frame{
-	background-image: url(:/images/D:/python things/PyProject/images/blusky.jpg);
+	background-image: url(:/images/PyProject/UI/images/blusky.jpg);
 }</string>
              </property>
              <property name="frameShape">
@@ -1207,7 +1207,7 @@ background-color:#fffff2;}</string>
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources1.qrc"/>
  </resources>
  <connections/>
 </ui>

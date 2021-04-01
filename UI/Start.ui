@@ -21,7 +21,7 @@ font-size:23px;
 
 QWidget{
 	
-	background-image: url(images/nightsky.jpg);
+	background-image: url(:/images/PyProject/UI/images/nightsky.png);
 }
 QFrame{
 background:#1e2833;
@@ -227,8 +227,7 @@ font-size:18px;
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>images/google-plus.jpg</normaloff>
-       <normalon>:/images/google-plus.jpg</normalon>images/google-plus.jpg</iconset>
+       <normaloff>images/google-plus.jpg</normaloff>images/google-plus.jpg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -370,7 +369,7 @@ font-size:18px;
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources1.qrc"/>
  </resources>
  <connections/>
 </ui>

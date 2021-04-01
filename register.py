@@ -1,5 +1,4 @@
 import sys
-import resources_rc
 from PyQt5 import QtWidgets 
 from PyQt5 import QtCore  
 from PyQt5 import QtGui
@@ -9,6 +8,7 @@ from registerdb import *
 from hasher import *
 from validator import *
 from MsgDialog import Msg
+from PwdDialog import Error2
 
 Ui_Register,baseClass=uic.loadUiType('UI/Register.ui')
 Ui_Error2,baseClass2=uic.loadUiType('ErrorTemplates/PassDet.ui')
@@ -43,13 +43,3 @@ class Register(baseClass):
                 self.cnfpass=Msg("Passwords do not match").exec_()
         else:
             self.empty=Msg("Fill all the fields").exec_()
-
-
-class Error2(baseClass2):
-    def __init__(self, *arg, **kwargs):
-        super().__init__(*arg,**kwargs)
-        #code start
-        self.ui=Ui_Error2()
-        self.ui.setupUi(self)
-        self.ui.OkBtn.clicked.connect(self.done)
-        self.ui.CancelBtn.clicked.connect(self.done)

@@ -14,11 +14,13 @@ from PyQt5.uic import loadUi
 # GUI FILE
 from ui_main_menu import Ui_MainWindow
 from MsgDialog import Msg
+from PwdDialog import Error2
 
 # IMPORT FUNCTIONS
 from ui_functions import *
 from addpasswordsDB import *
 from encrypt import AESCipher
+from validator import *
 
 
 class MainWindow(QMainWindow):
@@ -49,10 +51,13 @@ class MainWindow(QMainWindow):
 
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_Acc_name.text() and self.ui.per_username.text() != ""):
-            if(self.ui.checkBox.checkState()):
-                self.ppwd_add()
+            if(password_check(self.ui.per_password.text())):
+                if(self.ui.checkBox.checkState()):
+                    self.ppwd_add()
+                else:
+                    self.check=Msg("Check The Box").exec_()
             else:
-                self.check=Msg("Check The Box").exec_()
+                self.pError=Error2.exec_()
         else:
             self.fill=Msg("Fill all the Details").exec_()
     def ppwd_add(self):

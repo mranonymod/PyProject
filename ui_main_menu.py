@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_menuhJoDLh.ui'
+## Form generated from reading UI file 'main_menuJkurQj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -12,7 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-import resources_rc
+import resources1_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u":/images/PyProject/images/Menu.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/images/PyProject/UI/images/Menu.png", QSize(), QIcon.Normal, QIcon.Off)
         self.toggle.setIcon(icon)
         self.toggle.setIconSize(QSize(24, 24))
 
@@ -150,7 +150,7 @@ class Ui_MainWindow(object):
         self.Shared.setObjectName(u"Shared")
         self.Shared.setGeometry(QRect(0, 90, 100, 91))
         self.Shared.setMinimumSize(QSize(100, 0))
-        self.Shared.setStyleSheet(u"background-image: url(:/images/PyProject/images/Shared.png);\n"
+        self.Shared.setStyleSheet(u"background-image: url(:/images/PyProject/UI/images/Shared.png);\n"
 "background-repeat:none;\n"
 "padding-left:50px;\n"
 "background-position:center left;")
@@ -158,7 +158,7 @@ class Ui_MainWindow(object):
         self.Personal.setObjectName(u"Personal")
         self.Personal.setGeometry(QRect(0, 0, 100, 91))
         self.Personal.setMinimumSize(QSize(100, 0))
-        self.Personal.setStyleSheet(u"background-image: url(:/images/PyProject/images/personal.png);\n"
+        self.Personal.setStyleSheet(u"background-image: url(:/images/PyProject/UI/images/personal.png);\n"
 "background-repeat:none;\n"
 "padding-left:50px;\n"
 "background-position:center left;")
@@ -166,14 +166,14 @@ class Ui_MainWindow(object):
         self.Banking.setObjectName(u"Banking")
         self.Banking.setGeometry(QRect(0, 180, 100, 91))
         self.Banking.setMinimumSize(QSize(100, 0))
-        self.Banking.setStyleSheet(u"background-image: url(:/images/PyProject/images/banking.png);\n"
+        self.Banking.setStyleSheet(u"background-image: url(:/images/PyProject/UI/images/banking.png);\n"
 "background-repeat:none;\n"
 "padding-left:50px;\n"
 "background-position:center left;")
         self.Signout = QPushButton(self.left_menu_top_buttons)
         self.Signout.setObjectName(u"Signout")
         self.Signout.setGeometry(QRect(0, 450, 100, 91))
-        self.Signout.setStyleSheet(u"background-image: url(:/images/PyProject/images/exit.png);\n"
+        self.Signout.setStyleSheet(u"background-image: url(:/images/PyProject/UI/images/exit.png);\n"
 "background-repeat:none;\n"
 "padding-left:50px;\n"
 "background-position:center left;")
@@ -197,7 +197,7 @@ class Ui_MainWindow(object):
         self.page1_frame.setObjectName(u"page1_frame")
         self.page1_frame.setGeometry(QRect(-1, -1, 921, 571))
         self.page1_frame.setStyleSheet(u"#page1_frame{\n"
-"	background-image: url(images/blusky.jpg);\n"
+"	background-image: url(:/images/PyProject/UI/images/blusky.jpg);\n"
 "}")
         self.page1_frame.setFrameShape(QFrame.StyledPanel)
         self.page1_frame.setFrameShadow(QFrame.Raised)
@@ -291,7 +291,7 @@ class Ui_MainWindow(object):
         self.page2_frame.setObjectName(u"page2_frame")
         self.page2_frame.setGeometry(QRect(0, 0, 921, 571))
         self.page2_frame.setStyleSheet(u"#page2_frame{\n"
-"	background-image: url(images/blusky.jpg);\n"
+"	background-image: url(:/images/PyProject/UI/images/blusky.jpg);\n"
 "}")
         self.page2_frame.setFrameShape(QFrame.StyledPanel)
         self.page2_frame.setFrameShadow(QFrame.Raised)
@@ -385,7 +385,7 @@ class Ui_MainWindow(object):
         self.page3_frame.setObjectName(u"page3_frame")
         self.page3_frame.setGeometry(QRect(0, -10, 921, 571))
         self.page3_frame.setStyleSheet(u"#page3_frame{\n"
-"	background-image: url(images/blusky.jpg);\n"
+"	background-image: url(:/images/PyProject/UI/images/blusky.jpg);\n"
 "}")
         self.page3_frame.setFrameShape(QFrame.StyledPanel)
         self.page3_frame.setFrameShadow(QFrame.Raised)

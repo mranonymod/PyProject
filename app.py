@@ -1,5 +1,4 @@
 import sys
-import resources_rc
 import threading
 from PyQt5 import QtWidgets 
 from PyQt5 import QtCore  

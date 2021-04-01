@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="/images">
+    <file>../PyProject/UI/images/Menu.png</file>
+    <file>../PyProject/UI/images/banking.png</file>
+    <file>../PyProject/UI/images/personal.png</file>
+    <file>../PyProject/UI/images/Shared.png</file>
+    <file>../PyProject/UI/images/exit.png</file>
+    <file>../PyProject/UI/images/bg1.png</file>
+    <file>../PyProject/UI/images/blusky.jpg</file>
+    <file>../PyProject/UI/images/dusksky.jpg</file>
+    <file>../PyProject/UI/images/google-plus.png</file>
+    <file>../PyProject/UI/images/google-plus.jpg</file>
+    <file>../PyProject/UI/images/Hydrogen.jpg</file>
+    <file>../PyProject/UI/images/icon.png</file>
+    <file>../PyProject/UI/images/nightday.jpg</file>
+    <file>../PyProject/UI/images/nightsky.jpg</file>
+    <file>../PyProject/UI/images/nightsky.png</file>
+    <file>../PyProject/UI/images/register.jpg</file>
+    <file>../PyProject/UI/images/starrysky.jpg</file>
+    <file>../PyProject/UI/images/back.png</file>
+  </qresource>
+  </RCC>
