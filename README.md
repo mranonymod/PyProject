@@ -5,7 +5,7 @@ Password Manager made using Python
 How to Compile resources.qrc in app.py?
 
 ```bash
-pyrcc5 resources.qrc -o resources_rc.py
+pyrcc5 resources1.qrc -o resources1_rc.py
 ```
 then in app.py
 ```python
