@@ -7,9 +7,9 @@ How to Compile resources.qrc in app.py?
 ```bash
 pyrcc5 resources1.qrc -o resources1_rc.py
 ```
-then in app.py
+then in ui_main_menu.py
 ```python
-import resources_rc
+import resources1_rc
 ```
 Install this packages for password security
 ```python
