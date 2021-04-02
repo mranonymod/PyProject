@@ -1,11 +1,8 @@
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime,
-                            QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase,
-                           QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
-from PySide2.QtWidgets import *
+from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime)
+from PySide2.QtWidgets import QMainWindow,QTableWidget
 from PySide2.QtWidgets import QLabel
 
 from PyQt5 import uic
@@ -50,6 +47,7 @@ class MainWindow(QMainWindow):
 
         self.ui.Enter.clicked.connect(self.check)
         self.ui.view_pwd.clicked.connect(self.viewPwd)
+        self.tableWidget = QTableWidget()
 
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_Acc_name.text() and self.ui.per_username.text() != ""):
@@ -59,7 +57,7 @@ class MainWindow(QMainWindow):
                 else:
                     self.check=Msg("Check The Box").exec_()
             else:
-                self.pError=Error2.exec_()
+                self.pError=Error2().exec_()
         else:
             self.fill=Msg("Fill all the Details").exec_()
     def ppwd_add(self):
@@ -88,9 +86,17 @@ class MainWindow(QMainWindow):
     def viewPwd(self):
         self.get=viewPers(self.username)
         if(self.get.find()):
-                    print(self.get.find())
+            for row in self.get.find():
+                print(row[0])
+                print(row[1])
+                print(row[2])
+                print(row[3])
+                print(row[4])
+                print(self.decrypt(row[5]))
+                print(row[6])
+
         else:
             self.noUsr=Msg("No Passwords registered").exec_()
-
+    
 
 

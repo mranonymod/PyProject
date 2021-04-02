@@ -21,4 +21,4 @@ class add:
 
 a=add("bruh")
 
-print(a.getpwd())
+print(a.share())

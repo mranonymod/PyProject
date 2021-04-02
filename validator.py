@@ -1,3 +1,4 @@
+import re
 def password_check(passwd): 
       
     SpecialSym =['$', '@', '#', '%'] 
@@ -28,3 +29,9 @@ def password_check(passwd):
         val = False
     if val: 
         return val
+
+def email_check(email):
+        if re.match(r"[^@]+@[^@]+\.[^@]+", email):
+            return True
+        else:
+            return False
