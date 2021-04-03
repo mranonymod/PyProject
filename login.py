@@ -4,10 +4,10 @@ from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.uic import loadUi
-from logindb import *
+from DBlogin import *
 from hasher import *
 from gplus import *
-from MsgDialog import Msg
+from DialogMsg import Msg
 
 Ui_Form,baseClass=uic.loadUiType('UI/Start.ui')
 Ui_Msg,baseClass1=uic.loadUiType('ErrorTemplates/Message.ui')

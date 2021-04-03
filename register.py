@@ -4,11 +4,11 @@ from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.uic import loadUi
-from registerdb import *
+from DBregister import *
 from hasher import *
 from validator import *
-from MsgDialog import Msg
-from PwdDialog import Error2
+from DialogMsg import Msg
+from DialogPwd import Error2
 
 Ui_Register,baseClass=uic.loadUiType('UI/Register.ui')
 Ui_Error2,baseClass2=uic.loadUiType('ErrorTemplates/PassDet.ui')
