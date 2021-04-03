@@ -1,13 +1,13 @@
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime)
-from PySide2.QtWidgets import QMainWindow,QTableWidget
-from PySide2.QtWidgets import QLabel,QInputDialog
+from PySide2.QtCore import (QCoreApplication, QPropertyAnimation)
+from PySide2.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QLabel,QInputDialog,QTableWidget
 
 from PyQt5 import uic
 from PyQt5.uic import loadUi
-from PyQt5 import QtCore as qtc
+
 # GUI FILE
 from ui_main_menu import Ui_MainWindow
 from DialogMsg import Msg
@@ -29,11 +29,10 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.username = username
-        self.ui.toggle.clicked.connect(
-            lambda: UIFunctions.toggleMenu(self, 150, True))
         ## TOGGLE/BURGUER MENU
         ########################################################################
-        
+        self.ui.toggle.clicked.connect(
+            lambda: UIFunctions.toggleMenu(self, 150, True))
         ## PAGES
         ########################################################################
         # PAGE 1
@@ -53,8 +52,6 @@ class MainWindow(QMainWindow):
         for x in range(0,z):
             self.s1="".join(db(self.username).getServicesU()[x])
             self.ui.AccSelect.addItem(self.s1)
-    
-
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_username.text() != ""):
             if(self.ui.AccSelect_2.currentText()!="Select"):

@@ -1,12 +1,8 @@
 import sys
-import threading
-from PyQt5 import QtWidgets 
-from PyQt5 import QtCore  
+from PyQt5 import QtWidgets,QtCore,uic,QtGui
 from PyQt5.QtWidgets import QWidget,QLabel
 from PyQt5.QtGui import QMovie
-from PyQt5.QtCore import QCoreApplication, QObject, QRunnable, QThread, QThreadPool, pyqtSignal, pyqtSlot,Qt
-from PyQt5 import QtGui
-from PyQt5 import uic
+from PyQt5.QtCore import QCoreApplication,pyqtSignal, pyqtSlot,Qt
 from PyQt5.uic import loadUi
 from register import *
 from main import MainWindow
@@ -29,7 +25,7 @@ class LoadingScreen(QWidget):
     def stopAnimation(self):
         self.movie.stop()
         self.close()
-class Controller(QObject):
+class Controller():
     def __init__(self, *arg, **kwargs):
         super().__init__(*arg,**kwargs)
         self.window=Start(windowTitle='Choose')
