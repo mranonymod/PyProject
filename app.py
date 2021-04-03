@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 from PyQt5 import QtCore  
 from PyQt5.QtWidgets import QWidget,QLabel
 from PyQt5.QtGui import QMovie
-from PyQt5.QtCore import QCoreApplication, QObject, QRunnable, QThread, QThreadPool, pyqtSignal, pyqtSlot,Qt,QTimer
+from PyQt5.QtCore import QCoreApplication, QObject, QRunnable, QThread, QThreadPool, pyqtSignal, pyqtSlot,Qt
 from PyQt5 import QtGui
 from PyQt5 import uic
 from PyQt5.uic import loadUi
