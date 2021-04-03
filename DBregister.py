@@ -1,4 +1,4 @@
-from connect import *
+from DBconnect import *
 from app import Controller
 
 class Reg():

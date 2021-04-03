@@ -1,4 +1,4 @@
-from connect import *
+from DBconnect import *
 
 class db:
     def __init__(self,username):

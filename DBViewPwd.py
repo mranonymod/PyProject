@@ -1,4 +1,4 @@
-from connect import *
+from DBconnect import *
 
 class viewShd:
     def __init__(self,username):
