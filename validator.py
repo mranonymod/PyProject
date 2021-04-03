@@ -1,7 +1,7 @@
 import re
 def password_check(passwd): 
       
-    SpecialSym =['$', '@', '#', '%'] 
+    SpecialSym =['!','@','#','$','%','^','&','*','-','_'] 
     val = True
       
     if len(passwd) < 6: 
