@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_menuJkurQj.ui'
+## Form generated from reading UI file 'main_menuQSUYoI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: rgb(35, 35, 35);\n"
-"color:#fff200;")
+"color:#717072;")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -228,6 +228,14 @@ class Ui_MainWindow(object):
 "QPushButton:hover{\n"
 "background:#fffff2;\n"
 "}\n"
+"QComboBox{\n"
+"background:transparent;\n"
+"border:none;\n"
+"font-size:20px;\n"
+"color:#717072;\n"
+"border-bottom:1px solid #717072;\n"
+"\n"
+"}\n"
 "\n"
 "")
         self.PasswordBox.setFrameShape(QFrame.StyledPanel)
@@ -237,9 +245,6 @@ class Ui_MainWindow(object):
         self.Passwordtext.setGeometry(QRect(40, 0, 281, 81))
         self.Passwordtext.setStyleSheet(u"font-size:25px;\n"
 "")
-        self.per_Acc_name = QLineEdit(self.PasswordBox)
-        self.per_Acc_name.setObjectName(u"per_Acc_name")
-        self.per_Acc_name.setGeometry(QRect(230, 100, 531, 41))
         self.per_username = QLineEdit(self.PasswordBox)
         self.per_username.setObjectName(u"per_username")
         self.per_username.setGeometry(QRect(230, 170, 531, 41))
@@ -279,6 +284,11 @@ class Ui_MainWindow(object):
         self.another_pwd = QPushButton(self.PasswordBox)
         self.another_pwd.setObjectName(u"another_pwd")
         self.another_pwd.setGeometry(QRect(60, 400, 211, 40))
+        self.AccSelect_2 = QComboBox(self.PasswordBox)
+        self.AccSelect_2.addItem("")
+        self.AccSelect_2.addItem("")
+        self.AccSelect_2.setObjectName(u"AccSelect_2")
+        self.AccSelect_2.setGeometry(QRect(230, 100, 531, 41))
         self.stackedWidget.addWidget(self.Personal_Page)
         self.Shared_Page = QWidget()
         self.Shared_Page.setObjectName(u"Shared_Page")
@@ -323,6 +333,14 @@ class Ui_MainWindow(object):
 "background:#fffff2;\n"
 "}\n"
 "\n"
+"QComboBox{\n"
+"background:transparent;\n"
+"border:none;\n"
+"font-size:20px;\n"
+"color:#717072;\n"
+"border-bottom:1px solid #717072;\n"
+"\n"
+"}\n"
 "")
         self.PasswordBox_2.setFrameShape(QFrame.StyledPanel)
         self.PasswordBox_2.setFrameShadow(QFrame.Raised)
@@ -331,9 +349,6 @@ class Ui_MainWindow(object):
         self.Passwordtext_2.setGeometry(QRect(40, 0, 281, 81))
         self.Passwordtext_2.setStyleSheet(u"font-size:25px;\n"
 "")
-        self.sha_acc_name = QLineEdit(self.PasswordBox_2)
-        self.sha_acc_name.setObjectName(u"sha_acc_name")
-        self.sha_acc_name.setGeometry(QRect(230, 100, 531, 41))
         self.sha_username = QLineEdit(self.PasswordBox_2)
         self.sha_username.setObjectName(u"sha_username")
         self.sha_username.setGeometry(QRect(230, 170, 531, 41))
@@ -373,6 +388,10 @@ class Ui_MainWindow(object):
         self.another_pwd_2 = QPushButton(self.PasswordBox_2)
         self.another_pwd_2.setObjectName(u"another_pwd_2")
         self.another_pwd_2.setGeometry(QRect(60, 400, 211, 40))
+        self.AccSelect = QComboBox(self.PasswordBox_2)
+        self.AccSelect.addItem("")
+        self.AccSelect.setObjectName(u"AccSelect")
+        self.AccSelect.setGeometry(QRect(230, 100, 531, 41))
         self.stackedWidget.addWidget(self.Shared_Page)
         self.Banking_Page = QWidget()
         self.Banking_Page.setObjectName(u"Banking_Page")
@@ -493,8 +512,6 @@ class Ui_MainWindow(object):
         self.Banking.setText(QCoreApplication.translate("MainWindow", u"Banking", None))
         self.Signout.setText(QCoreApplication.translate("MainWindow", u"Sign-Out", None))
         self.Passwordtext.setText(QCoreApplication.translate("MainWindow", u"Personal Passwords", None))
-        self.per_Acc_name.setText("")
-        self.per_Acc_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AppName/Website", None))
         self.per_username.setText("")
         self.per_username.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UserName/E-Mail", None))
         self.per_password.setText("")
@@ -506,9 +523,10 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.view_pwd.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
         self.another_pwd.setText(QCoreApplication.translate("MainWindow", u"Add Another Password", None))
+        self.AccSelect_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Select", None))
+        self.AccSelect_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Other", None))
+
         self.Passwordtext_2.setText(QCoreApplication.translate("MainWindow", u"Shared Passwords", None))
-        self.sha_acc_name.setText("")
-        self.sha_acc_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AppName/Website", None))
         self.sha_username.setText("")
         self.sha_username.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UserName/E-Mail", None))
         self.sha_password.setText("")
@@ -520,6 +538,8 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.view_pwd_2.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
         self.another_pwd_2.setText(QCoreApplication.translate("MainWindow", u"Add Another Password", None))
+        self.AccSelect.setItemText(0, QCoreApplication.translate("MainWindow", u"Select", None))
+
         self.Passwordtext_3.setText(QCoreApplication.translate("MainWindow", u"Banking Passwords", None))
         self.Bank_AccNo.setText(QCoreApplication.translate("MainWindow", u"Accno.", None))
         self.Bank_AccNo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AppName/Website", None))
@@ -535,4 +555,5 @@ class Ui_MainWindow(object):
         self.view_pwd_3.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
         self.another_pwd_3.setText(QCoreApplication.translate("MainWindow", u"Add Another Password", None))
     # retranslateUi
+
 

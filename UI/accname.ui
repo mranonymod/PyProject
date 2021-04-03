@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>408</width>
+    <height>201</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>150</y>
+     <width>411</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+border-radius:none;
+border-right:1px solid;
+color:white;
+font-size:20px;
+font-family:&quot;Open-Sans&quot;,sans-serif;
+}
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="OkBtn">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>51</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#OkBtn{background: #fc7169;
+}
+#OkBtn:hover{
+background-color: #fc8982;
+}</string>
+      </property>
+      <property name="text">
+       <string>Ok</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="CancelBtn">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>51</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#CancelBtn{
+background-color: #35a785;
+}
+#CancelBtn:hover{
+	
+	background-color: rgb(63, 199, 158);
+}</string>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-1</y>
+     <width>411</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">*{
+font-family: 'Open Sans', sans-serif;
+font-size:23px;
+}
+
+QWidget{
+	
+	background-image: url(:/images/PyProject/UI/images/nightsky.png);
+}
+QFrame{
+background:#1e2833;
+border-radius:15px;
+}
+#LoginButton{
+background:#1df2ef;
+border-radius:15px;
+}
+#LoginButton:hover{
+background:#fffff2;
+}
+#RegisterButton{
+background:#1df2ef;
+border-radius:15px;
+}
+#RegisterButton:hover{
+background:#fffff2;
+}
+
+#GPButton{
+background:#DB4437;
+border-radius:15px;
+}
+#GPButton:hover{
+background:#fffff2;
+}
+#toolButton{
+background:#1df2ef;
+color:white;
+border-radius:60px;
+}
+#toolButton:hover{
+background:#fffff2;
+}
+QLabel{
+color:#fffff2;
+}
+QPushButton:hover{
+background: #fffff2;
+letter-spacing: 1px;
+
+}
+QLineEdit{
+background:transparent;
+border:none;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
+#label_4 ,#label_5{
+font-size:18px;
+}
+
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="AccText">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Home/Work/Server</string>
+    </property>
+    <property name="placeholderText">
+     <string>User Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>261</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Enter The Account Name</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

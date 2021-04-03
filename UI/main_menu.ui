@@ -21,7 +21,7 @@ font-family: 'Open Sans', sans-serif;
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">background-color: rgb(35, 35, 35);
-color:#fff2;</string>
+color:#717072;</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -479,6 +479,14 @@ color:black;}
 QPushButton:hover{
 background:#fffff2;
 }
+QComboBox{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
 
 </string>
              </property>
@@ -503,22 +511,6 @@ background:#fffff2;
               </property>
               <property name="text">
                <string>Personal Passwords</string>
-              </property>
-             </widget>
-             <widget class="QLineEdit" name="per_Acc_name">
-              <property name="geometry">
-               <rect>
-                <x>230</x>
-                <y>100</y>
-                <width>531</width>
-                <height>41</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="placeholderText">
-               <string>AppName/Website</string>
               </property>
              </widget>
              <widget class="QLineEdit" name="per_username">
@@ -668,6 +660,26 @@ background-color:#fffff2;}</string>
                <string>Add Another Password</string>
               </property>
              </widget>
+             <widget class="QComboBox" name="AccSelect_2">
+              <property name="geometry">
+               <rect>
+                <x>230</x>
+                <y>100</y>
+                <width>531</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>Select</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Other</string>
+               </property>
+              </item>
+             </widget>
             </widget>
            </widget>
           </widget>
@@ -742,6 +754,14 @@ QPushButton:hover{
 background:#fffff2;
 }
 
+QComboBox{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
 </string>
               </property>
               <property name="frameShape">
@@ -765,22 +785,6 @@ background:#fffff2;
                </property>
                <property name="text">
                 <string>Shared Passwords</string>
-               </property>
-              </widget>
-              <widget class="QLineEdit" name="sha_acc_name">
-               <property name="geometry">
-                <rect>
-                 <x>230</x>
-                 <y>100</y>
-                 <width>531</width>
-                 <height>41</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="placeholderText">
-                <string>AppName/Website</string>
                </property>
               </widget>
               <widget class="QLineEdit" name="sha_username">
@@ -929,6 +933,21 @@ background-color:#fffff2;}</string>
                <property name="text">
                 <string>Add Another Password</string>
                </property>
+              </widget>
+              <widget class="QComboBox" name="AccSelect">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>100</y>
+                 <width>531</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </item>
               </widget>
              </widget>
             </widget>
