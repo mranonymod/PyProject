@@ -45,13 +45,15 @@ class MainWindow(QMainWindow):
         self.ui.view_pwd.clicked.connect(self.viewPwd)
         self.ui.another_pwd.clicked.connect(self.gen_pwd)
         a=len(db(self.username).getServices())
-        for y in range(0,a):
-            self.s="".join(db(self.username).getServices()[y])
-            self.ui.AccSelect_2.addItem(self.s)
-        z=len(db(self.username).getServices())
-        for x in range(0,z):
-            self.s1="".join(db(self.username).getServicesU()[x])
-            self.ui.AccSelect.addItem(self.s1)
+        for y in range(a):
+            if(a!=0):
+                self.s="".join(db(self.username).getServices()[y])
+                self.ui.AccSelect_2.addItem(self.s)
+        z=len(db(self.username).getServicesU())
+        for x in range(z):
+            if(z!=0):
+                self.s1="".join(db(self.username).getServicesU()[x])
+                self.ui.AccSelect.addItem(self.s1)
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_username.text() != ""):
             if(self.ui.AccSelect_2.currentText()!="Select"):
