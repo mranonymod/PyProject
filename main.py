@@ -1,7 +1,7 @@
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import (QCoreApplication, QPropertyAnimation)
+from PySide2.QtCore import QCoreApplication, QPropertyAnimation,Signal
 from PySide2.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLabel,QInputDialog,QTableWidget
 
@@ -26,6 +26,7 @@ from generator import *
 
 
 class MainWindow(QMainWindow):
+    lw=Signal()
     def __init__(self,username):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -51,6 +52,7 @@ class MainWindow(QMainWindow):
         self.ui.another_pwd_2.clicked.connect(self.gen_pwd2)
         self.ui.another_pwd_3.clicked.connect(self.gen_pwd3)
         self.AccSelectAdd()
+        self.ui.Signout.clicked.connect(lambda : self.lw.emit())
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_username.text() != ""):
             if(self.ui.AccSelect_2.currentText()!="Select"):

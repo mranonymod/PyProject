@@ -2,7 +2,7 @@ import sys
 from PyQt5 import QtWidgets,QtCore,uic,QtGui
 from PyQt5.QtWidgets import QWidget,QLabel
 from PyQt5.QtGui import QMovie
-from PyQt5.QtCore import QCoreApplication,pyqtSignal, pyqtSlot,Qt
+from PyQt5.QtCore import QCoreApplication,pyqtSignal, pyqtSlot,Qt,QTimer
 from PyQt5.uic import loadUi
 from register import *
 from main import MainWindow
@@ -41,6 +41,7 @@ class Controller():
     def show_main(self,str):
         self.window.close()
         self.main=MainWindow(str)
+        self.main.lw.connect(self.signout)
         self.main.setWindowTitle(f"Welcome {str}")
         self.main.show() 
     def load(self):
@@ -51,8 +52,12 @@ class Controller():
         self.window.rw.connect(self.show_register)
         self.window.mw.connect(self.show_main)
         self.window.show()
-        
-
+    def signout(self):
+        self.main.close()
+        self.window=Start(windowTitle='Choose')
+        self.window.rw.connect(self.show_register)
+        self.window.mw.connect(self.show_main)
+        self.window.show()
         
 def main():
     app = QtWidgets.QApplication(sys.argv)
