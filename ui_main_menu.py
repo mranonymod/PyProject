@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_menuQSUYoI.ui'
+## Form generated from reading UI file 'main_menumbRVEG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -522,7 +522,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Username:", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.view_pwd.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
-        self.another_pwd.setText(QCoreApplication.translate("MainWindow", u"Add Another Password", None))
+        self.another_pwd.setText(QCoreApplication.translate("MainWindow", u"Generate Password", None))
         self.AccSelect_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Select", None))
         self.AccSelect_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Other", None))
 
@@ -530,14 +530,14 @@ class Ui_MainWindow(object):
         self.sha_username.setText("")
         self.sha_username.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UserName/E-Mail", None))
         self.sha_password.setText("")
-        self.sha_password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Password", None))
+        self.sha_password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SharedID/Password", None))
         self.Enter_2.setText(QCoreApplication.translate("MainWindow", u"Enter", None))
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"I hereby confirm all the details entered are correct.", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Account Name:", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Username:", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.view_pwd_2.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
-        self.another_pwd_2.setText(QCoreApplication.translate("MainWindow", u"Add Another Password", None))
+        self.another_pwd_2.setText(QCoreApplication.translate("MainWindow", u"Generate Password", None))
         self.AccSelect.setItemText(0, QCoreApplication.translate("MainWindow", u"Select", None))
 
         self.Passwordtext_3.setText(QCoreApplication.translate("MainWindow", u"Banking Passwords", None))
@@ -553,7 +553,5 @@ class Ui_MainWindow(object):
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Cust ID:", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
         self.view_pwd_3.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
-        self.another_pwd_3.setText(QCoreApplication.translate("MainWindow", u"Add Another Password", None))
+        self.another_pwd_3.setText(QCoreApplication.translate("MainWindow", u"Generate Password", None))
     # retranslateUi
-
-

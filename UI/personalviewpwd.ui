@@ -142,32 +142,32 @@ text-align:center;</string>
      </column>
      <item row="0" column="0">
       <property name="text">
-       <string>bruh</string>
+       <string/>
       </property>
      </item>
      <item row="0" column="1">
       <property name="text">
-       <string>bruh</string>
+       <string/>
       </property>
      </item>
      <item row="0" column="2">
       <property name="text">
-       <string>bruh</string>
+       <string/>
       </property>
      </item>
      <item row="0" column="3">
       <property name="text">
-       <string>100</string>
+       <string/>
       </property>
      </item>
      <item row="1" column="0">
       <property name="text">
-       <string>bruh</string>
+       <string/>
       </property>
      </item>
      <item row="1" column="1">
       <property name="text">
-       <string>bruh</string>
+       <string/>
       </property>
       <property name="font">
        <font>
@@ -180,7 +180,7 @@ text-align:center;</string>
      </item>
      <item row="1" column="2">
       <property name="text">
-       <string>bruh</string>
+       <string/>
       </property>
       <property name="font">
        <font>
@@ -193,7 +193,7 @@ text-align:center;</string>
      </item>
      <item row="1" column="3">
       <property name="text">
-       <string>1233</string>
+       <string/>
       </property>
      </item>
      <item row="2" column="1">
@@ -226,7 +226,7 @@ text-align:center;</string>
       <string>QRCode</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="Per_Generate">
+    <widget class="QPushButton" name="Per_Show">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -236,7 +236,7 @@ text-align:center;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Generate Password</string>
+      <string>Show Password</string>
      </property>
     </widget>
     <widget class="QPushButton" name="Per_Delete">

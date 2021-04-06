@@ -657,7 +657,7 @@ background-color:#fffff2;}</string>
                </rect>
               </property>
               <property name="text">
-               <string>Add Another Password</string>
+               <string>Generate Password</string>
               </property>
              </widget>
              <widget class="QComboBox" name="AccSelect_2">
@@ -819,7 +819,7 @@ border-bottom:1px solid #717072;
                 <enum>QLineEdit::Password</enum>
                </property>
                <property name="placeholderText">
-                <string>Password</string>
+                <string>SharedID/Password</string>
                </property>
               </widget>
               <widget class="QPushButton" name="Enter_2">
@@ -931,7 +931,7 @@ background-color:#fffff2;}</string>
                 </rect>
                </property>
                <property name="text">
-                <string>Add Another Password</string>
+                <string>Generate Password</string>
                </property>
               </widget>
               <widget class="QComboBox" name="AccSelect">
@@ -1209,7 +1209,7 @@ background-color:#fffff2;}</string>
                 </rect>
                </property>
                <property name="text">
-                <string>Add Another Password</string>
+                <string>Generate Password</string>
                </property>
               </widget>
              </widget>
