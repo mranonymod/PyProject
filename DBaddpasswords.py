@@ -8,14 +8,14 @@ class db:
         self.cur2=self.db.cursor()
         self.service=Service
         self.cur2.execute('''(SELECT Services FROM ServicesR WHERE Services=%s)''',(self.service,))
-        self.check1=self.cur2.fetchone()
+        self.check1=self.cur2.fetchall()
         self.cur2.close()
         self.cur4=self.db.cursor()
         self.cur4.execute('''SELECT Service FROM Passwords WHERE Service=%s''',(self.service,))
-        self.check2=self.cur4.fetchone()
+        self.check2=self.cur4.fetchall()
+        print(self.check2)
         self.cur4.close()
         if(self.check1):
-            return True
             if(self.check2):
                 return False
             else:
@@ -64,3 +64,5 @@ class db:
 
 # extract , is not an error (TUPLES ARE PASSED AS ARGUMENTS)
 #[m][n] to get a specific cell from fetched data
+'''A=db("bruh")
+print(A.check("WIFI"))'''

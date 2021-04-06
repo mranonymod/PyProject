@@ -44,5 +44,3 @@ for row in a.find():
     print(row[3])
     print(row[4])
     print(row[5])'''
-    
-    

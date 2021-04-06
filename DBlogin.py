@@ -9,12 +9,11 @@ class getdbpwd:
         self.cur=self.db.cursor()
         check=(self.username,self.password)
         self.cur.execute("""SELECT * FROM Users WHERE Username = %s and Password=%s ;""",check)
-        self.result=self.cur.fetchall()
+        self.result=self.cur.fetchone()
+        print(self.result)
         if(self.result):
             return True
         else:
             return False
 
         self.db.close()
-
-
