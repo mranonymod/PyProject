@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem
 from PyQt5.QtCore import pyqtSlot
 
-from DBAddShdU import shd
+from DBViewPwd import viewShd
 
 from encrypt import *
 
@@ -17,7 +17,7 @@ class SpwdView(baseClass):
         #code start
         self.ui=Ui_Table()
         self.ui.setupUi(self)
-        self.get=shd()
+        self.get=viewShd(self.username)
         self.ui.Pwd_table.hideColumn(2)
         self.ui.Sha_Show.clicked.connect(lambda : self.ui.Pwd_table.showColumn(2))
         self.rows,self.key=self.get.getPasses(self.username)
