@@ -1,4 +1,5 @@
 from DBconnect import *
+#from icecream import ic
 
 class db:
     def __init__(self,username):
@@ -19,13 +20,15 @@ class db:
         self.check1=self.cur2.fetchall()
         self.cur2.close()
         self.cur4=self.db.cursor()
-        self.cur4.execute('''SELECT Service FROM Passwords WHERE Service=%s''',(self.service,))
+        self.cur4.execute('''SELECT Service FROM Passwords WHERE Service=%s AND Username=%s''',(self.service,self.username))
         self.check2=self.cur4.fetchall()
         self.cur4.close()
         if(self.check1):
             if(self.check2):
+                #ic()
                 return False
             else:
+                #ic()
                 return True
         else:
             self.inService=self.db.cursor()
@@ -51,12 +54,15 @@ class db:
         self.EPassword = EPassword
         self.Service = Service
         self.shdid=SharedID
+        ic()
         if(self.check(self.Service)):
             self.cur3=self.db.cursor()
             self.cur3.execute('''INSERT INTO Passwords(Username,AccUserName,Service,Passwords,SharedID) VALUES(%s,%s,%s,%s,%s)''',(self.username,self.AccUserName,self.Service,self.EPassword,self.shdid))
             self.db.commit()
+            ic()
             return True
         else:
+            ic()
             return False
         self.db.close()
     
