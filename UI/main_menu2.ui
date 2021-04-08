@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>961</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+font-family: 'Open Sans', sans-serif;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(35, 35, 35);
+color:#717072;</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="main_header">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="title_bar_container">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="left_menu_toggle">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="toggle">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame{
+background-color: rgb(35, 35, 35);
+}
+
+QPushButton{
+padding:5px 10px;
+border:none;
+
+background-color:transparent;
+color:#fff;
+
+}
+QPushButton:hover{
+background-color:rgb(85,255,255);
+}
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="../resources1.qrc">
+                 <normaloff>:/images/PyProject/UI/images/Menu.png</normaloff>:/images/PyProject/UI/images/Menu.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="title_bar">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>770</x>
+               <y>0</y>
+               <width>101</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color:#fffff2;
+font-family:'Open Sans', sans-serif;
+font-size:30px;</string>
+             </property>
+             <property name="text">
+              <string>Protekt</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="main_body">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="left_side_menu">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame{
+background-color: rgb(35, 35, 35);
+}
+
+QPushButton{
+padding:5px 10px;
+border:none;
+border-bottom:1px solid;
+
+background-color:transparent;
+color:#fff;
+}
+QPushButton:hover{
+background-color:rgb(85,255,255);
+
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>11</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="left_menu_top_buttons">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QPushButton" name="Shared">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>90</y>
+               <width>100</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/Shared.png);
+background-repeat:none;
+padding-left:50px;
+background-position:center left;</string>
+             </property>
+             <property name="text">
+              <string>Shared</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="Personal">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>100</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/personal.png);
+background-repeat:none;
+padding-left:50px;
+background-position:center left;</string>
+             </property>
+             <property name="text">
+              <string>Personal</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="Banking">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>180</y>
+               <width>100</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/banking.png);
+background-repeat:none;
+padding-left:50px;
+background-position:center left;</string>
+             </property>
+             <property name="text">
+              <string>Banking</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="Signout">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>450</y>
+               <width>100</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/images/PyProject/UI/images/exit.png);
+background-repeat:none;
+padding-left:50px;
+background-position:center left;</string>
+             </property>
+             <property name="text">
+              <string>Sign-Out</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="center_side_menu">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(75, 75, 75);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QStackedWidget" name="stackedWidget">
+          <property name="geometry">
+           <rect>
+            <x>-1</x>
+            <y>-1</y>
+            <width>911</width>
+            <height>581</height>
+           </rect>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="Personal_Page">
+           <widget class="QFrame" name="page1_frame">
+            <property name="geometry">
+             <rect>
+              <x>-1</x>
+              <y>-1</y>
+              <width>921</width>
+              <height>571</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#page1_frame{
+	background-image: url(:/images/PyProject/UI/images/blusky.jpg);
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QFrame" name="PasswordBox">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>30</y>
+               <width>871</width>
+               <height>501</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
+
+QFrame{
+background-color: rgb(30, 40, 51) ;
+font-size:23px;
+border-radius:40px;
+color:#fffff2;
+}
+QPushButton{
+background:#1df2ef;
+font-size:18px;
+border-radius:15px;
+color:black;}
+
+QPushButton:hover{
+background:#fffff2;
+}
+QComboBox{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
+
+</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <widget class="QLabel" name="Passwordtext">
+              <property name="geometry">
+               <rect>
+                <x>40</x>
+                <y>0</y>
+                <width>281</width>
+                <height>81</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font-size:25px;
+</string>
+              </property>
+              <property name="text">
+               <string>Personal Passwords</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="per_username">
+              <property name="geometry">
+               <rect>
+                <x>230</x>
+                <y>170</y>
+                <width>531</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>UserName/E-Mail</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="per_password">
+              <property name="geometry">
+               <rect>
+                <x>230</x>
+                <y>250</y>
+                <width>531</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+              <property name="placeholderText">
+               <string>Password</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="Enter">
+              <property name="geometry">
+               <rect>
+                <x>360</x>
+                <y>400</y>
+                <width>180</width>
+                <height>40</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>Enter</string>
+              </property>
+             </widget>
+             <widget class="QCheckBox" name="checkBox">
+              <property name="geometry">
+               <rect>
+                <x>250</x>
+                <y>320</y>
+                <width>511</width>
+                <height>20</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;
+color:#fffff2;
+font-size:15px;</string>
+              </property>
+              <property name="text">
+               <string>I hereby confirm all the details entered are correct.</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label">
+              <property name="geometry">
+               <rect>
+                <x>70</x>
+                <y>110</y>
+                <width>151</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font-size:20px;</string>
+              </property>
+              <property name="text">
+               <string>Account Name:</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_2">
+              <property name="geometry">
+               <rect>
+                <x>70</x>
+                <y>180</y>
+                <width>121</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font-size:20px;</string>
+              </property>
+              <property name="text">
+               <string>Username:</string>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_3">
+              <property name="geometry">
+               <rect>
+                <x>70</x>
+                <y>260</y>
+                <width>121</width>
+                <height>31</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font-size:20px;</string>
+              </property>
+              <property name="text">
+               <string>Password:</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="view_pwd">
+              <property name="geometry">
+               <rect>
+                <x>620</x>
+                <y>400</y>
+                <width>180</width>
+                <height>40</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">#view_pwd{
+background-color:#DB4437;
+}
+#view_pwd:hover{
+background-color:#fffff2;}</string>
+              </property>
+              <property name="text">
+               <string>View Passwords</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="another_pwd">
+              <property name="geometry">
+               <rect>
+                <x>60</x>
+                <y>400</y>
+                <width>211</width>
+                <height>40</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>Generate Password</string>
+              </property>
+             </widget>
+             <widget class="QComboBox" name="AccSelect_2">
+              <property name="geometry">
+               <rect>
+                <x>230</x>
+                <y>100</y>
+                <width>531</width>
+                <height>41</height>
+               </rect>
+              </property>
+              <item>
+               <property name="text">
+                <string>Select</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Other</string>
+               </property>
+              </item>
+             </widget>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="Shared_Page">
+           <widget class="QFrame" name="tempframe">
+            <property name="geometry">
+             <rect>
+              <x>-1</x>
+              <y>-1</y>
+              <width>941</width>
+              <height>561</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QFrame" name="page2_frame">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>921</width>
+               <height>571</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#page2_frame{
+	background-image: url(:/images/PyProject/UI/images/blusky.jpg);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <widget class="QFrame" name="PasswordBox_2">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>30</y>
+                <width>871</width>
+                <height>501</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
+
+QFrame{
+background-color: rgb(30, 40, 51) ;
+font-size:23px;
+border-radius:40px;
+color:#fffff2;
+}
+QPushButton{
+background:#1df2ef;
+font-size:18px;
+border-radius:15px;
+color:black;}
+
+QPushButton:hover{
+background:#fffff2;
+}
+
+QComboBox{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="Passwordtext_2">
+               <property name="geometry">
+                <rect>
+                 <x>40</x>
+                 <y>0</y>
+                 <width>281</width>
+                 <height>81</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:25px;
+</string>
+               </property>
+               <property name="text">
+                <string>Shared Passwords</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="sha_username">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>170</y>
+                 <width>531</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Username to Share with</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="DeleteUser">
+               <property name="geometry">
+                <rect>
+                 <x>80</x>
+                 <y>390</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Delete User</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkBox_2">
+               <property name="geometry">
+                <rect>
+                 <x>240</x>
+                 <y>250</y>
+                 <width>511</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color:transparent;
+color:#fffff2;
+font-size:15px;</string>
+               </property>
+               <property name="text">
+                <string>I hereby confirm all the details entered are correct.</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_5">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>110</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:20px;</string>
+               </property>
+               <property name="text">
+                <string>Account Name:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_6">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>180</y>
+                 <width>121</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:20px;</string>
+               </property>
+               <property name="text">
+                <string>Username:</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="ViewShaPwd">
+               <property name="geometry">
+                <rect>
+                 <x>630</x>
+                 <y>390</y>
+                 <width>191</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#view_pwd_2{
+background-color:#DB4437;
+}
+#view_pwd_2:hover{
+background-color:#fffff2;}</string>
+               </property>
+               <property name="text">
+                <string>View Shared Passwords</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="AddUser">
+               <property name="geometry">
+                <rect>
+                 <x>80</x>
+                 <y>310</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Add User</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="AccSelect">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>100</y>
+                 <width>531</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </item>
+              </widget>
+              <widget class="QPushButton" name="ViewUsers">
+               <property name="geometry">
+                <rect>
+                 <x>630</x>
+                 <y>310</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#view_pwd_4{
+background-color:#DB4437;
+}
+#view_pwd_4:hover{
+background-color:#fffff2;}</string>
+               </property>
+               <property name="text">
+                <string>View Users</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="qr">
+               <property name="geometry">
+                <rect>
+                 <x>340</x>
+                 <y>310</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Generate QR Code</string>
+               </property>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="Banking_Page">
+           <widget class="QFrame" name="tempframe2">
+            <property name="geometry">
+             <rect>
+              <x>-1</x>
+              <y>-1</y>
+              <width>911</width>
+              <height>561</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QFrame" name="page3_frame">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>-10</y>
+               <width>921</width>
+               <height>571</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#page3_frame{
+	background-image: url(:/images/PyProject/UI/images/blusky.jpg);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <widget class="QFrame" name="PasswordBox_3">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>40</y>
+                <width>871</width>
+                <height>501</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+background:transparent;
+border:none;
+font-size:20px;
+color:#717072;
+border-bottom:1px solid #717072;
+
+}
+
+QFrame{
+background-color: rgb(30, 40, 51) ;
+font-size:23px;
+border-radius:40px;
+color:#fffff2;
+}
+QPushButton{
+background:#1df2ef;
+font-size:18px;
+border-radius:15px;
+color:black;}
+
+QPushButton:hover{
+background:#fffff2;
+}
+
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <widget class="QLabel" name="Passwordtext_3">
+               <property name="geometry">
+                <rect>
+                 <x>40</x>
+                 <y>0</y>
+                 <width>281</width>
+                 <height>81</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:25px;
+</string>
+               </property>
+               <property name="text">
+                <string>Banking Passwords</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="Bank_AccNo">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>100</y>
+                 <width>531</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Accno.</string>
+               </property>
+               <property name="placeholderText">
+                <string>AppName/Website</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="bank_custID">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>170</y>
+                 <width>531</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>CustID</string>
+               </property>
+               <property name="placeholderText">
+                <string>UserName/E-Mail</string>
+               </property>
+              </widget>
+              <widget class="QLineEdit" name="bank_pwd">
+               <property name="geometry">
+                <rect>
+                 <x>230</x>
+                 <y>250</y>
+                 <width>531</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
+               <property name="placeholderText">
+                <string>Password</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="Enter_3">
+               <property name="geometry">
+                <rect>
+                 <x>360</x>
+                 <y>400</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Enter</string>
+               </property>
+              </widget>
+              <widget class="QCheckBox" name="checkBox_3">
+               <property name="geometry">
+                <rect>
+                 <x>250</x>
+                 <y>320</y>
+                 <width>511</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color:transparent;
+color:#fffff2;
+font-size:15px;</string>
+               </property>
+               <property name="text">
+                <string>I hereby confirm all the details entered are correct.</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_8">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>110</y>
+                 <width>151</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:20px;</string>
+               </property>
+               <property name="text">
+                <string>Account No.</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_9">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>180</y>
+                 <width>121</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:20px;</string>
+               </property>
+               <property name="text">
+                <string>Cust ID:</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_10">
+               <property name="geometry">
+                <rect>
+                 <x>70</x>
+                 <y>260</y>
+                 <width>121</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size:20px;</string>
+               </property>
+               <property name="text">
+                <string>Password:</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="view_pwd_3">
+               <property name="geometry">
+                <rect>
+                 <x>620</x>
+                 <y>400</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#view_pwd_3{
+background-color:#DB4437;
+}
+#view_pwd_3:hover{
+background-color:#fffff2;}</string>
+               </property>
+               <property name="text">
+                <string>View Passwords</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="another_pwd_3">
+               <property name="geometry">
+                <rect>
+                 <x>60</x>
+                 <y>400</y>
+                 <width>211</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Generate Password</string>
+               </property>
+              </widget>
+             </widget>
+            </widget>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources1.qrc"/>
+ </resources>
+ <connections/>
+</ui>
