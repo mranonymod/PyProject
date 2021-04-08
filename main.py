@@ -99,7 +99,7 @@ class MainWindow(QMainWindow):
         self.AccUsrName=self.ui.per_username.text()
         self.shdid=genpwd()
         self.add=db(self.username)
-        if(self.add.add(self.AccUsrName,self.Pwd,self.service)):
+        if(self.add.add(self.AccUsrName,self.Pwd,self.service,self.shdid)):
             self.ui.per_password.clear()
             self.ui.per_username.clear()
             self.success=Msg("Password Stored").exec_()

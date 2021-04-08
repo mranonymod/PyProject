@@ -53,7 +53,7 @@ class db:
         self.shdid=SharedID
         if(self.check(self.Service)):
             self.cur3=self.db.cursor()
-            self.cur3.execute('''INSERT INTO Passwords(Username,AccUserName,Service,Passwords,SharedID) VALUES(%s,%s,%s,%s)''',(self.username,self.AccUserName,self.Service,self.EPassword,self.shdid))
+            self.cur3.execute('''INSERT INTO Passwords(Username,AccUserName,Service,Passwords,SharedID) VALUES(%s,%s,%s,%s,%s)''',(self.username,self.AccUserName,self.Service,self.EPassword,self.shdid))
             self.db.commit()
             return True
         else:
