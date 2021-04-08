@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_menumbRVEG.ui'
+## Form generated from reading UI file 'main_menu2UNuhbS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -352,16 +352,13 @@ class Ui_MainWindow(object):
         self.sha_username = QLineEdit(self.PasswordBox_2)
         self.sha_username.setObjectName(u"sha_username")
         self.sha_username.setGeometry(QRect(230, 170, 531, 41))
-        self.sha_password = QLineEdit(self.PasswordBox_2)
-        self.sha_password.setObjectName(u"sha_password")
-        self.sha_password.setGeometry(QRect(230, 250, 531, 41))
-        self.sha_password.setEchoMode(QLineEdit.Password)
-        self.Enter_2 = QPushButton(self.PasswordBox_2)
-        self.Enter_2.setObjectName(u"Enter_2")
-        self.Enter_2.setGeometry(QRect(360, 400, 180, 40))
+        self.sha_username.setClearButtonEnabled(False)
+        self.DeleteUser = QPushButton(self.PasswordBox_2)
+        self.DeleteUser.setObjectName(u"DeleteUser")
+        self.DeleteUser.setGeometry(QRect(80, 390, 180, 40))
         self.checkBox_2 = QCheckBox(self.PasswordBox_2)
         self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setGeometry(QRect(250, 320, 511, 20))
+        self.checkBox_2.setGeometry(QRect(240, 250, 511, 20))
         self.checkBox_2.setStyleSheet(u"background-color:transparent;\n"
 "color:#fffff2;\n"
 "font-size:15px;")
@@ -373,25 +370,32 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(70, 180, 121, 31))
         self.label_6.setStyleSheet(u"font-size:20px;")
-        self.label_7 = QLabel(self.PasswordBox_2)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(70, 260, 121, 31))
-        self.label_7.setStyleSheet(u"font-size:20px;")
-        self.view_pwd_2 = QPushButton(self.PasswordBox_2)
-        self.view_pwd_2.setObjectName(u"view_pwd_2")
-        self.view_pwd_2.setGeometry(QRect(620, 400, 180, 40))
-        self.view_pwd_2.setStyleSheet(u"#view_pwd_2{\n"
+        self.ViewShaPwd = QPushButton(self.PasswordBox_2)
+        self.ViewShaPwd.setObjectName(u"ViewShaPwd")
+        self.ViewShaPwd.setGeometry(QRect(630, 390, 191, 40))
+        self.ViewShaPwd.setStyleSheet(u"#view_pwd_2{\n"
 "background-color:#DB4437;\n"
 "}\n"
 "#view_pwd_2:hover{\n"
 "background-color:#fffff2;}")
-        self.another_pwd_2 = QPushButton(self.PasswordBox_2)
-        self.another_pwd_2.setObjectName(u"another_pwd_2")
-        self.another_pwd_2.setGeometry(QRect(60, 400, 211, 40))
+        self.AddUser = QPushButton(self.PasswordBox_2)
+        self.AddUser.setObjectName(u"AddUser")
+        self.AddUser.setGeometry(QRect(80, 310, 180, 40))
         self.AccSelect = QComboBox(self.PasswordBox_2)
         self.AccSelect.addItem("")
         self.AccSelect.setObjectName(u"AccSelect")
         self.AccSelect.setGeometry(QRect(230, 100, 531, 41))
+        self.ViewUsers = QPushButton(self.PasswordBox_2)
+        self.ViewUsers.setObjectName(u"ViewUsers")
+        self.ViewUsers.setGeometry(QRect(630, 310, 180, 40))
+        self.ViewUsers.setStyleSheet(u"#view_pwd_4{\n"
+"background-color:#DB4437;\n"
+"}\n"
+"#view_pwd_4:hover{\n"
+"background-color:#fffff2;}")
+        self.qr = QPushButton(self.PasswordBox_2)
+        self.qr.setObjectName(u"qr")
+        self.qr.setGeometry(QRect(340, 310, 180, 40))
         self.stackedWidget.addWidget(self.Shared_Page)
         self.Banking_Page = QWidget()
         self.Banking_Page.setObjectName(u"Banking_Page")
@@ -528,18 +532,17 @@ class Ui_MainWindow(object):
 
         self.Passwordtext_2.setText(QCoreApplication.translate("MainWindow", u"Shared Passwords", None))
         self.sha_username.setText("")
-        self.sha_username.setPlaceholderText(QCoreApplication.translate("MainWindow", u"UserName/E-Mail", None))
-        self.sha_password.setText("")
-        self.sha_password.setPlaceholderText(QCoreApplication.translate("MainWindow", u"SharedID/Password", None))
-        self.Enter_2.setText(QCoreApplication.translate("MainWindow", u"Enter", None))
+        self.sha_username.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username to Share with", None))
+        self.DeleteUser.setText(QCoreApplication.translate("MainWindow", u"Delete User", None))
         self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"I hereby confirm all the details entered are correct.", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Account Name:", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Username:", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Password:", None))
-        self.view_pwd_2.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
-        self.another_pwd_2.setText(QCoreApplication.translate("MainWindow", u"Generate Password", None))
+        self.ViewShaPwd.setText(QCoreApplication.translate("MainWindow", u"View Shared Passwords", None))
+        self.AddUser.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
         self.AccSelect.setItemText(0, QCoreApplication.translate("MainWindow", u"Select", None))
 
+        self.ViewUsers.setText(QCoreApplication.translate("MainWindow", u"View Users", None))
+        self.qr.setText(QCoreApplication.translate("MainWindow", u"Generate QR Code", None))
         self.Passwordtext_3.setText(QCoreApplication.translate("MainWindow", u"Banking Passwords", None))
         self.Bank_AccNo.setText(QCoreApplication.translate("MainWindow", u"Accno.", None))
         self.Bank_AccNo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AppName/Website", None))
@@ -555,3 +558,4 @@ class Ui_MainWindow(object):
         self.view_pwd_3.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
         self.another_pwd_3.setText(QCoreApplication.translate("MainWindow", u"Generate Password", None))
     # retranslateUi
+
