@@ -4,6 +4,14 @@ class shd:
     def __init__(self):
         self.db=mydb
     def show(self,addu):
+        """Check if username exists in DB before sharing password with it
+
+        Args:
+            addu (string): username
+
+        Returns:
+            Boolean: True if username found
+        """
         self.username1=addu
         self.cur=self.db.cursor()
         self.cur.execute('''SELECT Username FROM Users WHERE Username = %s''',(self.username1,))
@@ -13,33 +21,87 @@ class shd:
             return True
         else:
             return False
-    def share(self,username,sharedid,service):
-        self.username=username
-        self.sharedid=sharedid
+    def share(self,user1,user2,service):
+        """Stores the user id (with whom password is to be shared) and shared id in a seperate table so that
+
+        Args:
+            user1 (string): Username whose password is to be shared
+            user2 (string): Username to whom password is going to be shared
+            service (string): Account name of the password
+
+        Returns:
+            Int/Boolean: returns value of rows affected by insertion or False when sharing operation fails
+        """
+        self.username=user2
+        self.user1=user1
         self.service=service
         if(self.show(self.username)):
-            self.cur2=self.db.cursor()
-            self.cur2.execute('''UPDATE Passwords SET SharedID=%s WHERE Service=%s AND SharedID IS NULL''',(self.sharedid,self.service))
-            self.db.commit()
-            if(self.cur2.rowcount):
-                self.cur1=self.db.cursor()
-                self.cur1.execute('''INSERT SHDGRP(SharedID,Username) VALUES (%s,%s)''',(self.sharedid,self.username))
-                self.passervice=self.cur1.rowcount
-                self.cur1.close()
-                self.db.commit()
-            else:
+            self.cur1=self.db.cursor()
+            self.cur1.execute('''SELECT SharedID FROM Passwords WHERE Service = %s AND Username = %s''',(self.service,self.user1))
+            self.id=self.cur1.fetchone()[0]
+            if(self.check1(self.id,self.username)):
                 self.cur6=self.db.cursor()
-                self.cur6.execute('''SELECT SharedID FROM Passwords WHERE Service = %s''',(self.service,))
-                self.id=self.cur6.fetchone()[0]
-                self.cur1=self.db.cursor()
-                self.cur1.execute('''INSERT SHDGRP(SharedID,Username) VALUES (%s,%s)''',(self.id,self.username))
-                self.passervice=self.cur1.rowcount
+                self.cur6.execute('''INSERT SHDGRP(SharedID,Username) VALUES (%s,%s)''',(self.id,self.username))
+                self.passervice=self.cur6.rowcount
                 self.cur1.close()
                 self.db.commit()
+                return self.passervice
+            else:
+                return False
+        else:
+            return False
+    def check1(self,id,usr):
+        """checks if any passwords have already been shared to a given user id
+
+        Args:
+            id (string): SharedID assigned to a password that allows sharing
+            usr (string): Username
+
+        Returns:
+                Boolean: False if any passwords have already been shared else True
+        """
+        self.chk=self.db.cursor()
+        self.chk.execute('''SELECT SharedID,Username FROM SHDGRP WHERE SharedID=%s AND Username=%s''',(id,usr))
+        self.r=self.chk.fetchall()
+        if(self.r):
+            return False
+        else:
+            return True
+    def unshare(self,user1,user2,service):
+        """removes the user id from the seperate table so as to revoke his access to shared password
+
+        Args:
+            user1 (string): Username whose password is to be unshared
+            user2 (string): Username to whom password is going to be unshared
+            service (string): Account name of the password
+
+        Returns:
+            Int/Boolean: returns value of rows affected by deletion or False when unsharing operation fails
+        """
+        self.username=user2
+        self.user1=user1
+        self.service=service
+        if(self.show(self.username)):
+            self.cur1=self.db.cursor()
+            self.cur1.execute('''SELECT SharedID FROM Passwords WHERE Service = %s AND Username = %s''',(self.service,self.user1))
+            self.id=self.cur1.fetchone()[0]
+            self.cur6=self.db.cursor()
+            self.cur6.execute('''DELETE FROM SHDGRP WHERE SharedID=%s AND Username=%s''',(self.id,self.username))
+            self.passervice=self.cur6.rowcount
+            self.cur1.close()
+            self.db.commit()
             return self.passervice
         else:
             return False
     def getPasses(self,viewu):
+        """return encryption key(hashed pwd) and encrypted passwords
+
+        Args:
+            viewu (string): username whose passswords are to be retrieved
+
+        Returns:
+            [type]: [description]
+        """
         self.username2=viewu
         self.r=[]
         self.cur2=self.db.cursor()
@@ -57,6 +119,14 @@ class shd:
             return False
         self.cur3.close()
     def givekey(self,id):
+        """get encryption key (main password (hashed)) by retrieving the username of the owner of passwords and then the password with the help of username
+
+        Args:
+            id (string): SharedID of the password 
+
+        Returns:
+            string: SHA256 Hashed password key of the user account
+        """
         self.id=id
         self.u=[]
         self.key=[]
@@ -72,8 +142,9 @@ class shd:
             self.key.append(self.cur5.fetchone()[0])
         self.cur5.close()
         return self.key
+
 '''b=shd()
-print(b.share("Eren","123456","WIFI"))'''
+print(b.share("bruh","Eren","WIFI"))'''
 
 '''a=shd()
 if(a.getPasses("bruh")):
