@@ -7,7 +7,8 @@ from PyQt5.uic import loadUi
 from register import *
 from main import MainWindow
 from login import *
-
+from icecream import install
+install()
 class LoadingScreen(QWidget):
     def __init__(self):
         super().__init__()
@@ -26,6 +27,7 @@ class LoadingScreen(QWidget):
         self.movie.stop()
         self.close()
 class Controller():
+    finished=pyqtSignal()
     def __init__(self, *arg, **kwargs):
         super().__init__(*arg,**kwargs)
         self.window=Start(windowTitle='Choose')
@@ -43,7 +45,7 @@ class Controller():
         self.main=MainWindow(str)
         self.main.lw.connect(self.signout)
         self.main.setWindowTitle(f"Welcome {str}")
-        self.main.show() 
+        self.main.show()
     def load(self):
         self.L=LoadingScreen()
     def start2(self):

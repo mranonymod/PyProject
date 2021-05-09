@@ -4,8 +4,9 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem
 from PyQt5.QtCore import pyqtSlot
 from DBaddpasswords import db
-
+import pyperclip
 from DBViewPwd import viewPers
+from DialogMsg import Msg
 
 from encrypt import *
 
@@ -20,7 +21,8 @@ class PpwdView(baseClass):
         self.ui.setupUi(self)
         self.get=viewPers(self.username)
         self.ui.Pwd_table.hideColumn(2)
-        self.ui.Per_Show.clicked.connect(lambda : self.ui.Pwd_table.showColumn(2))
+        self.ui.Per_Show.clicked.connect(lambda :self.showpwd())
+        self.ui.Per_Copy.clicked.connect(lambda:self.copied())
         for x in range(len(self.get.find())):
             for y in range(len(self.get.find()[x])):
                 if(y==2):
@@ -35,7 +37,19 @@ class PpwdView(baseClass):
                 elif(y==3):
                     self.ui.Pwd_table.setItem(x,0,QTableWidgetItem(self.get.find()[x][y]))
                 else:
-                    pass     
+                    pass
+    def copied(self):
+        pyperclip.copy('The text to be copied to the clipboard.')
+        self.error=Msg("Password has been copied").exec_()
+    def showpwd(self):
+        self.ui.Pwd_table.showColumn(2)
+        self.ui.Per_Show.setText("Hide Password")
+        self.ui.Per_Show.clicked.connect(lambda :self.hidepwd())
+    def hidepwd(self):
+        self.ui.Pwd_table.hideColumn(2)
+        self.ui.Per_Show.setText("Show Password")
+        self.ui.Per_Show.clicked.connect(lambda :self.showpwd())
+
     def decrypt(self,str):
         self.key=db(self.username).getkey()
         self.str=str

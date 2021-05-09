@@ -15,7 +15,7 @@ class shd:
         self.username1=addu
         self.cur=self.db.cursor()
         self.cur.execute('''SELECT Username FROM Users WHERE Username = %s''',(self.username1,))
-        self.result=self.cur.fetchone()[0]
+        self.result=self.cur.fetchone()
         self.cur.close()
         if(self.result):
             return True
@@ -144,7 +144,7 @@ class shd:
         return self.key
 
 '''b=shd()
-print(b.share("bruh","Eren","WIFI"))'''
+print(b.show("Ere"))'''
 
 '''a=shd()
 if(a.getPasses("bruh")):

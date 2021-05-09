@@ -1,8 +1,8 @@
 import sys
 import platform
-from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import QCoreApplication, QPropertyAnimation,Signal
-from PySide2.QtWidgets import QMainWindow
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import QCoreApplication, QPropertyAnimation,pyqtSignal
+from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLabel,QInputDialog,QTableWidget
 
 from PyQt5 import uic
@@ -27,7 +27,7 @@ from generator import *
 
 
 class MainWindow(QMainWindow):
-    lw=Signal()
+    lw=pyqtSignal()
     def __init__(self,username):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -55,6 +55,7 @@ class MainWindow(QMainWindow):
         self.ui.another_pwd_3.clicked.connect(self.gen_pwd3)
         self.AccSelectAdd()
         self.ui.Signout.clicked.connect(lambda : self.lw.emit())
+
     def check(self):
         if(self.ui.per_password.text() and self.ui.per_username.text() != ""):
             if(self.ui.AccSelect_2.currentText()!="Select"):
@@ -69,6 +70,7 @@ class MainWindow(QMainWindow):
                 self.fill=Msg("Select an Account").exec_()
         else:
             self.fill=Msg("Fill all the Details").exec_()
+
     def check2(self):
         if(self.ui.sha_username.text() != ""):
             if(self.ui.AccSelect.currentText()!="Select"):
@@ -80,6 +82,7 @@ class MainWindow(QMainWindow):
                 self.fill=Msg("Select an Account").exec_()
         else:
             self.fill=Msg("Fill all the Details").exec_()
+
     def check3(self):
         if(self.ui.sha_username.text() != ""):
             if(self.ui.AccSelect.currentText()!="Select"):
@@ -106,6 +109,7 @@ class MainWindow(QMainWindow):
             self.AccSelectAdd()
         else:
             self.failed=Msg("Service already exists").exec_()
+
     def spwd_add(self):
         self.service=self.getItem2()
         self.UsrName=self.ui.sha_username.text()
@@ -115,6 +119,7 @@ class MainWindow(QMainWindow):
             self.success=Msg("Password Shared").exec_()
         else:
             self.failed=Msg("User does not exist").exec_()
+
     def spwd_del(self):
         self.service=self.getItem2()
         self.UsrName=self.ui.sha_username.text()
@@ -124,6 +129,7 @@ class MainWindow(QMainWindow):
             self.success=Msg("Password Unshared").exec_()
         else:
             self.failed=Msg("User does not exist").exec_()
+
     def encrypt(self,str):
         self.key=db(self.username).getkey()
         self.str=str
@@ -141,6 +147,7 @@ class MainWindow(QMainWindow):
             self.view.show()
         else:
             self.noUsr=Msg("No Passwords registered").exec_()
+
     def viewPwd2(self):
         self.get=shd()
         if(self.get.getPasses(self.username)):
@@ -148,13 +155,14 @@ class MainWindow(QMainWindow):
             self.view.show()
         else:
             self.noUsr=Msg("No Passwords registered").exec_()
+
     def viewUsers(self):
         self.get=viewShd(self.username)
         if(self.get.getusers()):
             self.view=SusrView(self.username)
             self.view.show()
         else:
-            self.noUsr=Msg("No Passwords registered").exec_()
+            self.noUsr=Msg("No Passwords shared").exec_()
     def gen_pwd(self):
         self.pwdgen=genpwd()
         self.ui.per_password.setText(self.pwdgen)
@@ -175,12 +183,14 @@ class MainWindow(QMainWindow):
             return False
         else:
             return self.content
+
     def getItem2(self):
         self.content = self.ui.AccSelect.currentText()
         if(self.content=="Select"):
             return False
         else:
             return self.content
+            
     def AccSelectAdd(self):
         self.ui.AccSelect.clear()
         self.ui.AccSelect_2.clear()
