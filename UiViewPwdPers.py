@@ -6,6 +6,7 @@ from PyQt5.QtCore import pyqtSlot
 from DBaddpasswords import db
 import pyperclip
 from DBViewPwd import viewPers
+from DBdelpwd import db1
 from DialogMsg import Msg
 
 from encrypt import *
@@ -19,10 +20,13 @@ class PpwdView(baseClass):
         #code start
         self.ui=Ui_Table()
         self.ui.setupUi(self)
+        self.ui.Pwd_table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.get=viewPers(self.username)
         self.ui.Pwd_table.hideColumn(2)
         self.ui.Per_Show.clicked.connect(lambda :self.showpwd())
         self.ui.Per_Copy.clicked.connect(lambda:self.copied())
+        self.ui.Per_Delete.clicked.connect(lambda:self.delete())
+        self.ui.Pwd_table.cellClicked.connect(self.cellClick)
         for x in range(len(self.get.find())):
             for y in range(len(self.get.find()[x])):
                 if(y==2):
@@ -38,9 +42,29 @@ class PpwdView(baseClass):
                     self.ui.Pwd_table.setItem(x,0,QTableWidgetItem(self.get.find()[x][y]))
                 else:
                     pass
+    def delete(self):
+        self.user=self.ui.Pwd_table.item(self.row,1).text()
+        self.serv=self.ui.Pwd_table.item(self.row,0).text()
+        self.delt=db1(self.user,self.serv)
+        print(self.delt.delete())
+        if(self.delt.delete()):
+            self.suc=Msg("Deletion complete").exec_()
+            for i in range(4):
+                self.ui.Pwd_table.setItem(self.row,i,QTableWidgetItem(""))
+
+        else:
+            self.fai=Msg("Unshare Password First").exec_()
+
+    def cellClick(self, row, col):
+        self.row = row
+        self.col = col
+        print(self.row,self.col)
     def copied(self):
-        pyperclip.copy('The text to be copied to the clipboard.')
-        self.error=Msg("Password has been copied").exec_()
+        print(self.row,self.col)
+        z=self.ui.Pwd_table.item(self.row,self.col).text()
+        print(z)
+        pyperclip.copy(z)
+        self.cpy=Msg("Password has been copied").exec_()
     def showpwd(self):
         self.ui.Pwd_table.showColumn(2)
         self.ui.Per_Show.setText("Hide Password")
