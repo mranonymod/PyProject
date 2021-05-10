@@ -30,16 +30,18 @@ CREATE TABLE SHDGRP(
     Username VARCHAR(64) ,FOREIGN KEY (`Username`) REFERENCES `Users` (`Username`)
 );
 
-INSERT INTO Users values ('Yash18','Yash','mryash018@gmail.com','Yash');
-INSERT INTO Users values('Eren','Eren','eren@gmail.com','Eren');
+INSERT INTO Users values ('Yash18@','Yash','mryash018@gmail.com','5014cf14bc63c47d74306feb4e0c1498313cfd71ae309462d44b8a97c763e990');
+INSERT INTO Users values('Eren7@','ERENYEAGAR','eren@gmail.com','0f26fc7f966c6e83fc7424fef46ec96ea37a3503edc5bf52c379aaf374720436');
 INSERT INTO Users values ('bruh','bruh','bruh@gmail.com','408f31d86c6bf4a8aff4ea682ad002278f8cb39dc5f37b53d343e63a61f3cc4f');
 INSERT INTO ServicesR(Services) values ('NETFLIX');
 INSERT INTO ServicesR(Services) values ('DISNEY+');
-INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('Yash18','YashNetflix','NETFLIX','8989','Yashnflix');
-INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('Eren','ErenDisney+','DISNEY+','0456','Erendney');
-INSERT INTO SHDGRP(SharedID,Username) VALUES ('8989','Eren');
-INSERT INTO SHDGRP(SharedID,Username) VALUES ('8989','bruh');
-INSERT INTO SHDGRP(SharedID,Username) VALUES('0456','bruh');
+INSERT INTO ServicesR(Services) values ('WIFI');
+INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('bruh','bruh','WIFI','63hWc7S#Te3v6iU4v','T2hNDPX8VUxdojDhoVxFsGmYyrFaqOjRDpA41KP6Ldo=');
+INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('Yash18@','Yash18@','NETFLIX','-LCMBkcsf*X9i#Bm5','SZlHMYTTmOltAXEqZ5eZTFzeVq6tJ1ZvgVNvl6jpsaM=');
+INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('Eren7@','Eren7@','DISNEY+','7v3dmnol1OapsN&xP','UVwaU7ksW+1NYwPe4f2JWpdj/i9EIto+3Py79Sh5/9w=');
+INSERT INTO SHDGRP(SharedID,Username) VALUES ('63hWc7S#Te3v6iU4v','Eren7@');
+INSERT INTO SHDGRP(SharedID,Username) VALUES ('7v3dmnol1OapsN&xP','bruh');
+INSERT INTO SHDGRP(SharedID,Username) VALUES('-LCMBkcsf*X9i#Bm5','bruh');
 
 
 
