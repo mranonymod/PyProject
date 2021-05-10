@@ -950,6 +950,19 @@ background-color:#fffff2;}</string>
                 <string>Generate QR Code</string>
                </property>
               </widget>
+              <widget class="QPushButton" name="qr_2">
+               <property name="geometry">
+                <rect>
+                 <x>340</x>
+                 <y>390</y>
+                 <width>180</width>
+                 <height>40</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Scan QR Code</string>
+               </property>
+              </widget>
              </widget>
             </widget>
            </widget>

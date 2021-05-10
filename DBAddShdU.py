@@ -3,6 +3,12 @@ from DBconnect import *
 class shd:
     def __init__(self):
         self.db=mydb
+    def qr1(self,username,service):
+        self.cur7=self.db.cursor()
+        self.cur7.execute('''SELECT SharedID FROM Passwords WHERE Username = %s AND Service =%s''',(username,service))
+        self.result=self.cur7.fetchone()
+        self.cur7.close()
+        return self.result[0]
     def show(self,addu):
         """Check if username exists in DB before sharing password with it
 
@@ -143,8 +149,9 @@ class shd:
         self.cur5.close()
         return self.key
 
+
 '''b=shd()
-print(b.show("Ere"))'''
+print(b.qr1("bruh","WIFI"))'''
 
 '''a=shd()
 if(a.getPasses("bruh")):

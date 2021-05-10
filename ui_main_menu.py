@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_menu2UNuhbS.ui'
+## Form generated from reading UI file 'main_menu2siOVnU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -396,6 +396,9 @@ class Ui_MainWindow(object):
         self.qr = QPushButton(self.PasswordBox_2)
         self.qr.setObjectName(u"qr")
         self.qr.setGeometry(QRect(340, 310, 180, 40))
+        self.qr_2 = QPushButton(self.PasswordBox_2)
+        self.qr_2.setObjectName(u"qr_2")
+        self.qr_2.setGeometry(QRect(340, 390, 180, 40))
         self.stackedWidget.addWidget(self.Shared_Page)
         self.Banking_Page = QWidget()
         self.Banking_Page.setObjectName(u"Banking_Page")
@@ -543,6 +546,7 @@ class Ui_MainWindow(object):
 
         self.ViewUsers.setText(QCoreApplication.translate("MainWindow", u"View Users", None))
         self.qr.setText(QCoreApplication.translate("MainWindow", u"Generate QR Code", None))
+        self.qr_2.setText(QCoreApplication.translate("MainWindow", u"Scan QR Code", None))
         self.Passwordtext_3.setText(QCoreApplication.translate("MainWindow", u"Banking Passwords", None))
         self.Bank_AccNo.setText(QCoreApplication.translate("MainWindow", u"Accno.", None))
         self.Bank_AccNo.setPlaceholderText(QCoreApplication.translate("MainWindow", u"AppName/Website", None))
@@ -558,4 +562,6 @@ class Ui_MainWindow(object):
         self.view_pwd_3.setText(QCoreApplication.translate("MainWindow", u"View Passwords", None))
         self.another_pwd_3.setText(QCoreApplication.translate("MainWindow", u"Generate Password", None))
     # retranslateUi
+
+
 

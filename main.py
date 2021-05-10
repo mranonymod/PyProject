@@ -4,6 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QCoreApplication, QPropertyAnimation,pyqtSignal
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QLabel,QInputDialog,QTableWidget
+from qrcode import *
 
 from PyQt5 import uic
 from PyQt5.uic import loadUi
@@ -48,6 +49,7 @@ class MainWindow(QMainWindow):
         self.ui.Enter.clicked.connect(self.check)
         self.ui.AddUser.clicked.connect(self.check2)
         self.ui.DeleteUser.clicked.connect(self.check3)
+        self.ui.qr.clicked.connect(self.check4)
         self.ui.view_pwd.clicked.connect(self.viewPwd)
         self.ui.ViewShaPwd.clicked.connect(self.viewPwd2)
         self.ui.ViewUsers.clicked.connect(self.viewUsers)
@@ -95,7 +97,14 @@ class MainWindow(QMainWindow):
         else:
             self.fill=Msg("Fill all the Details").exec_()
     
-   
+    def check4(self):
+        if(self.ui.AccSelect.currentText()!="Select"):
+            if(self.ui.checkBox_2.checkState()):
+                self.qrgen()
+            else:
+                self.check=Msg("Check The Box").exec_()
+        else:
+            self.fill=Msg("Select an Account").exec_()
     def ppwd_add(self):
         self.Pwd=self.encrypt(self.ui.per_password.text())
         self.service=self.getItem()
@@ -129,6 +138,12 @@ class MainWindow(QMainWindow):
             self.success=Msg("Password Unshared").exec_()
         else:
             self.failed=Msg("User does not exist").exec_()
+    def qrgen(self):
+        self.service=self.getItem2()
+        self.qr1=shd()
+        self.sid=self.qr1.qr1(self.username,self.service)
+        genqr(self.sid)
+        Msg("QR Generated").exec()
 
     def encrypt(self,str):
         self.key=db(self.username).getkey()
