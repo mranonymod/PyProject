@@ -25,7 +25,7 @@ class SpwdView(baseClass):
             for y in range(len(self.rows[x])):
                 if(y==2):
                     ek=self.rows[x][y]
-                    #pk=self.decrypt(ek)
+                    pk=self.decrypt(ek)
                     self.ui.Pwd_table.setItem(x,y,QTableWidgetItem(ek))    
                 else:
                     pass
