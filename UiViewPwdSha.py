@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem
 from PyQt5.QtCore import pyqtSlot
 
 from DBViewPwd import viewShd
-
+from DBaddpasswords import db
 from encrypt import *
 
 Ui_Table,baseClass=uic.loadUiType('UI/sharedpwdview.ui')
@@ -25,13 +25,15 @@ class SpwdView(baseClass):
             for y in range(len(self.rows[x])):
                 if(y==2):
                     ek=self.rows[x][y]
-                    pk=self.decrypt(ek)
-                    self.ui.Pwd_table.setItem(x,y,QTableWidgetItem(ek))    
+                    usr1=self.rows[x][0]
+                    pk=self.decrypt(ek,usr1)
+                    self.ui.Pwd_table.setItem(x,y,QTableWidgetItem(pk))    
                 else:
                     pass
                     self.ui.Pwd_table.setItem(x,y,QTableWidgetItem(self.rows[x][y]))     
-    def decrypt(self,str):
-        self.key=db(self.username).getkey()
+    def decrypt(self,str,usr1):
+        self.user1=usr1
+        self.key=db(self.user1).getkey()
         self.str=str
         self.pwd=AESCipher(self.key)
         return self.pwd.decrypt(self.str)
