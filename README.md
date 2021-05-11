@@ -26,6 +26,9 @@ For pyqt5
 ```python
 pip install PyQt5
 ```
+```python
 pip install pyperclip
 pip install opencv-python
 pip install qrcode[pil]
+pip install pyqrcode
+```
