@@ -31,4 +31,5 @@ pip install pyperclip
 pip install opencv-python
 pip install qrcode[pil]
 pip install pyqrcode
+pip install pypng
 ```
