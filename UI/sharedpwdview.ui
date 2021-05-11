@@ -201,7 +201,7 @@ text-align:center;</string>
       </property>
      </item>
     </widget>
-    <widget class="QPushButton" name="Sha_Qrcode">
+    <widget class="QPushButton" name="Sha_Login">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -211,7 +211,7 @@ text-align:center;</string>
       </rect>
      </property>
      <property name="text">
-      <string>QRCode</string>
+      <string>Autologin</string>
      </property>
     </widget>
     <widget class="QPushButton" name="Sha_Show">

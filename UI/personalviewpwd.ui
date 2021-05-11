@@ -213,7 +213,7 @@ text-align:center;</string>
       </property>
      </item>
     </widget>
-    <widget class="QPushButton" name="Per_Qrcode">
+    <widget class="QPushButton" name="Per_Login">
      <property name="geometry">
       <rect>
        <x>210</x>

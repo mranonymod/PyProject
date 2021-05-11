@@ -1,5 +1,0 @@
-website='https://www.netflix.com'
-signin='/html/body/div[1]/div/div/div/div/div/div[1]/div/a'
-signinb='/html/body/div[1]/div/div[3]/div/div/div[1]/form/button'
-emailidp='/html/body/div[1]/div/div[3]/div/div/div[1]/form/div[1]/div/div/label/input'
-passwordp='/html/body/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div/div/label/input'

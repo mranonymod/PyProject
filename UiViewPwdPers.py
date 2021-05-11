@@ -8,6 +8,7 @@ import pyperclip
 from DBViewPwd import viewPers
 from DBdelpwd import db1
 from DialogMsg import Msg
+from autologin import *
 
 from encrypt import *
 
@@ -17,6 +18,8 @@ class PpwdView(baseClass):
     def __init__(self,username):
         super(PpwdView,self).__init__()
         self.username = username
+        self.row=""
+        self.col=""
         #code start
         self.ui=Ui_Table()
         self.ui.setupUi(self)
@@ -27,6 +30,7 @@ class PpwdView(baseClass):
         self.ui.Per_Copy.clicked.connect(lambda:self.copied())
         self.ui.Per_Delete.clicked.connect(lambda:self.delete())
         self.ui.Pwd_table.cellClicked.connect(self.cellClick)
+        self.ui.Per_Login.clicked.connect(lambda : self.checkAL())
         for x in range(len(self.get.find())):
             for y in range(len(self.get.find()[x])):
                 if(y==2):
@@ -42,6 +46,17 @@ class PpwdView(baseClass):
                     self.ui.Pwd_table.setItem(x,0,QTableWidgetItem(self.get.find()[x][y]))
                 else:
                     pass
+    def checkAL(self):
+        if(self.row!=""):
+            if(self.ui.Pwd_table.item(self.row,self.col).text()!=""):
+                if(AutoLogin(self.ui.Pwd_table.item(self.row,0).text(),self.ui.Pwd_table.item(self.row,1).text(),self.ui.Pwd_table.item(self.row,2).text())):
+                    pass
+                else:
+                    Msg("Service Doesn't Support Autologin").exec_()
+            else:
+                Msg("Select an Account").exec_()
+        else:
+            Msg("Select an Account").exec_()
     def delete(self):
         self.user=self.ui.Pwd_table.item(self.row,1).text()
         self.serv=self.ui.Pwd_table.item(self.row,0).text()
@@ -58,13 +73,19 @@ class PpwdView(baseClass):
     def cellClick(self, row, col):
         self.row = row
         self.col = col
-        print(self.row,self.col)
+        #print(self.row,self.col)
     def copied(self):
         print(self.row,self.col)
-        z=self.ui.Pwd_table.item(self.row,self.col).text()
-        print(z)
-        pyperclip.copy(z)
-        self.cpy=Msg("Password has been copied").exec_()
+        if(self.row!=""):
+            if(self.ui.Pwd_table.item(self.row,self.col).text()!=""):
+                z=self.ui.Pwd_table.item(self.row,self.col).text()
+                #print(z)
+                pyperclip.copy(z)
+                self.cpy=Msg("Password has been copied").exec_()
+            else:
+                Msg("Select an Account").exec_()
+        else:
+            Msg("Select an Account").exec_()
     def showpwd(self):
         self.ui.Pwd_table.showColumn(2)
         self.ui.Per_Show.setText("Hide Password")
