@@ -3,6 +3,7 @@ from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem
 from PyQt5.QtCore import pyqtSlot
+import pyperclip
 
 from DBViewPwd import viewShd
 from DBaddpasswords import db
@@ -25,6 +26,7 @@ class SpwdView(baseClass):
         self.ui.Pwd_table.hideColumn(2)
         self.ui.Pwd_table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.ui.Sha_Show.clicked.connect(lambda :self.showpwd())
+        self.ui.Sha_Copy.clicked.connect(lambda:self.copied())
         self.rows,self.key=self.get.getPasses(self.username)
         self.ui.Pwd_table.cellClicked.connect(self.cellClick)
         self.ui.Sha_Login.clicked.connect(lambda : self.checkAL())
@@ -48,6 +50,18 @@ class SpwdView(baseClass):
                     pass
                 else:
                     Msg("Service Doesn't Support Autologin").exec_()
+            else:
+                Msg("Select an Account").exec_()
+        else:
+            Msg("Select an Account").exec_()
+    def copied(self):
+        print(self.row,self.col)
+        if(self.row!=""):
+            if(self.ui.Pwd_table.item(self.row,self.col).text()!=""):
+                z=self.ui.Pwd_table.item(self.row,self.col).text()
+                #print(z)
+                pyperclip.copy(z)
+                self.cpy=Msg("Password has been copied").exec_()
             else:
                 Msg("Select an Account").exec_()
         else:

@@ -14,16 +14,16 @@ class db1:
             return False
         else:
             return True
-
     def delete(self):
         if(self.checksh()):
             self.cur2=self.db.cursor()
-            self.cur2.execute('''DELETE FROM Passwords WHERE Service = %s AND Username = %s;''',(self.service,self.username))
+            self.cur2.execute('''DELETE FROM Passwords WHERE Service = %s AND Username = %s''',(self.service,self.username))
             self.db.commit()
             self.id2=self.cur2.rowcount
-            return True
+            ic(self.id2)
+            return self.id2
         else:
             return False
         
-'''new=db1("bruh","WIFI")
+'''new=db1("bruh","DISNEY+")
 print(new.delete())'''

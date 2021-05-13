@@ -61,7 +61,6 @@ class PpwdView(baseClass):
         self.user=self.ui.Pwd_table.item(self.row,1).text()
         self.serv=self.ui.Pwd_table.item(self.row,0).text()
         self.delt=db1(self.user,self.serv)
-        print(self.delt.delete())
         if(self.delt.delete()):
             self.suc=Msg("Deletion complete").exec_()
             for i in range(4):

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Personal Window</string>
+   <string>Shared Window</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="view_pwdbox">
@@ -225,28 +225,6 @@ text-align:center;</string>
      </property>
      <property name="text">
       <string>Show Password</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Sha_Delete">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>340</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#Per_Delete{
-background-color:#DB4437;
-}
-#Per_Delete:hover{
-background-color:white;
-line-spacing:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string>Delete</string>
      </property>
     </widget>
     <widget class="QPushButton" name="Sha_Copy">

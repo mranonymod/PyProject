@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Personal Window</string>
+   <string>User Window</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="view_pwdbox">
@@ -167,36 +167,10 @@ text-align:center;</string>
       </property>
      </item>
     </widget>
-    <widget class="QPushButton" name="Sha_Qrcode">
+    <widget class="QPushButton" name="Usr_Delete">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>340</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>QRCode</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Sha_Show">
-     <property name="geometry">
-      <rect>
-       <x>400</x>
-       <y>340</y>
-       <width>171</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Show Password</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Sha_Delete">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
+       <x>320</x>
        <y>340</y>
        <width>161</width>
        <height>41</height>
@@ -213,19 +187,6 @@ line-spacing:3px;
      </property>
      <property name="text">
       <string>Delete</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="Sha_Copy">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>340</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Copy</string>
      </property>
     </widget>
    </widget>

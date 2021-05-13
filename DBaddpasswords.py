@@ -54,12 +54,10 @@ class db:
         self.EPassword = EPassword
         self.Service = Service
         self.shdid=SharedID
-        ic()
         if(self.check(self.Service)):
             self.cur3=self.db.cursor()
             self.cur3.execute('''INSERT INTO Passwords(Username,AccUserName,Service,Passwords,SharedID) VALUES(%s,%s,%s,%s,%s)''',(self.username,self.AccUserName,self.Service,self.EPassword,self.shdid))
             self.db.commit()
-            ic()
             return True
         else:
             ic()

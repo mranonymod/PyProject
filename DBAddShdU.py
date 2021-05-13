@@ -148,10 +148,25 @@ class shd:
             self.key.append(self.cur5.fetchone()[0])
         self.cur5.close()
         return self.key
+    def chqr(self,shdid,usr):
+        self.cur9=self.db.cursor()
+        self.cur9.execute('''SELECT Username FROM Passwords WHERE SharedID = %s AND Username = %s''',(shdid,usr))
+        self.rr=self.cur9.fetchone()
+        return self.rr
 
+    def qrsh(self,shdid,usr):
+        if(self.chqr(shdid,usr)):
+            return False
+        else:
+            self.cur9=self.db.cursor()
+            self.cur9.execute('''INSERT INTO SHDGRP(SharedID,Username) VALUES(%s,%s)''',(shdid,usr))
+            self.rr=self.cur9.rowcount
+            self.db.commit()
+            self.cur9.close()
+            return self.rr
 
 '''b=shd()
-print(b.qr1("bruh","WIFI"))'''
+print(b.qrsh("63hWc7S#Te3v6iU4v","bruh"))'''
 
 '''a=shd()
 if(a.getPasses("bruh")):

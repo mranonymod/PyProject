@@ -17,7 +17,8 @@ from DialogGetAcc import Other
 from UiViewPwdPers import PpwdView
 from UiViewPwdSha import SpwdView
 from UiViewSharedUsers import SusrView
-# IMPORT FUNCTIONS
+# IMPORT FUNCTIONS'
+from qrdet import *
 from ui_functions import *
 from DBaddpasswords import *
 from DBAddShdU import *
@@ -55,6 +56,7 @@ class MainWindow(QMainWindow):
         self.ui.ViewUsers.clicked.connect(self.viewUsers)
         self.ui.another_pwd.clicked.connect(self.gen_pwd)
         self.ui.another_pwd_3.clicked.connect(self.gen_pwd3)
+        self.ui.qr_2.clicked.connect(self.qrcheck)
         self.AccSelectAdd()
         self.ui.Signout.clicked.connect(lambda : self.lw.emit())
 
@@ -144,6 +146,13 @@ class MainWindow(QMainWindow):
         self.sid=self.qr1.qr1(self.username,self.service)
         genqr(self.sid)
         Msg("QR Generated").exec()
+    def qrcheck(self):
+        self.shdid1=qrdet()
+        self.ad=shd()
+        if(self.ad.qrsh(self.shdid1,self.username)):
+            Msg("Password Added").exec()
+        else:
+            Msg("Can't Share To Yourself").exec()
 
     def encrypt(self,str):
         self.key=db(self.username).getkey()
