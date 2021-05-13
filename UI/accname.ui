@@ -188,10 +188,10 @@ font-size:18px;
      </rect>
     </property>
     <property name="text">
-     <string>Home/Work/Server</string>
+     <string/>
     </property>
     <property name="placeholderText">
-     <string>User Name</string>
+     <string>Home/Work/Server</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
