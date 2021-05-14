@@ -61,6 +61,8 @@ class MainWindow(QMainWindow):
         self.ui.Signout.clicked.connect(lambda : self.lw.emit())
 
     def check(self):
+        """ Checks if all the required details are filled or not for adding personal password to the database
+        """
         if(self.ui.per_password.text() and self.ui.per_username.text() != ""):
             if(self.ui.AccSelect_2.currentText()!="Select"):
                 if(password_check(self.ui.per_password.text())):
@@ -76,6 +78,8 @@ class MainWindow(QMainWindow):
             self.fill=Msg("Fill all the Details").exec_()
 
     def check2(self):
+        """ Checks if all the required details are filled or not for sharing password with another user 
+        """
         if(self.ui.sha_username.text() != ""):
             if(self.ui.AccSelect.currentText()!="Select"):
                     if(self.ui.checkBox_2.checkState()):
@@ -88,6 +92,8 @@ class MainWindow(QMainWindow):
             self.fill=Msg("Fill all the Details").exec_()
 
     def check3(self):
+        """ Checks if all the required details are filled or not for unsharing personal password from another user
+        """
         if(self.ui.sha_username.text() != ""):
             if(self.ui.AccSelect.currentText()!="Select"):
                     if(self.ui.checkBox_2.checkState()):
@@ -100,6 +106,8 @@ class MainWindow(QMainWindow):
             self.fill=Msg("Fill all the Details").exec_()
     
     def check4(self):
+        """ Checks if required account is selected or not for generating qr code to share the account password
+        """
         if(self.ui.AccSelect.currentText()!="Select"):
             if(self.ui.checkBox_2.checkState()):
                 self.qrgen()
@@ -108,6 +116,8 @@ class MainWindow(QMainWindow):
         else:
             self.fill=Msg("Select an Account").exec_()
     def ppwd_add(self):
+        """ Stores Personal Password in the database
+        """
         self.Pwd=self.encrypt(self.ui.per_password.text())
         self.service=self.getItem()
         self.AccUsrName=self.ui.per_username.text()
@@ -122,6 +132,8 @@ class MainWindow(QMainWindow):
             self.failed=Msg("Service already exists").exec_()
 
     def spwd_add(self):
+        """ Shares Personal Password to another user
+        """
         self.service=self.getItem2()
         self.UsrName=self.ui.sha_username.text()
         self.add=shd()
@@ -132,6 +144,8 @@ class MainWindow(QMainWindow):
             self.failed=Msg("User does not exist").exec_()
 
     def spwd_del(self):
+        """Unshares Personal Password from given user
+        """
         self.service=self.getItem2()
         self.UsrName=self.ui.sha_username.text()
         self.add=shd()
@@ -141,12 +155,16 @@ class MainWindow(QMainWindow):
         else:
             self.failed=Msg("User does not exist").exec_()
     def qrgen(self):
+        """Generates QR Code from Passwords's SharedID to allow sharing with multiple users
+        """
         self.service=self.getItem2()
         self.qr1=shd()
         self.sid=self.qr1.qr1(self.username,self.service)
         genqr(self.sid)
         Msg("QR Generated").exec()
     def qrcheck(self):
+        """ Scans QR Code to get your shared password
+        """
         self.shdid1=qrdet()
         self.ad=shd()
         if(self.ad.qrsh(self.shdid1,self.username)):
@@ -155,16 +173,34 @@ class MainWindow(QMainWindow):
             Msg("Can't Share To Yourself").exec()
 
     def encrypt(self,str):
+        """ Encrypts Personal password before storing it in the database.It uses the username and password of the user for the process
+
+        Args:
+            str (STRING): Password to be encrypted
+
+        Returns:
+            String : Encrypted Password
+        """
         self.key=db(self.username).getkey()
         self.str=str
         self.pwd=AESCipher(self.key)
         return self.pwd.encrypt(str)
     def decrypt(self,str):
+        """Decrypts Personal password before storing it in the database.It uses the username and password of the user for the process
+
+        Args:
+            str (STRING): Password to be decrypted
+
+        Returns:
+            String : Decrypted Password
+        """
         self.key=db(self.username).getkey()
         self.str=str
         self.pwd=AESCipher(self.key)
         return self.pwd.decrypt(str)
     def viewPwd(self):
+        """ Opens a window to display user's Personal Passwords
+        """
         self.get=viewPers(self.username)
         if(self.get.find()):
             self.view=PpwdView(self.username)
@@ -173,6 +209,8 @@ class MainWindow(QMainWindow):
             self.noUsr=Msg("No Passwords registered").exec_()
 
     def viewPwd2(self):
+        """Opens a  window to display passwords shared with the user
+        """
         self.get=shd()
         if(self.get.getPasses(self.username)):
             self.view=SpwdView(self.username)
@@ -181,6 +219,8 @@ class MainWindow(QMainWindow):
             self.noUsr=Msg("No Passwords registered").exec_()
 
     def viewUsers(self):
+        """Opens a window to display the list of users to whom the current user has shared password with
+        """
         self.get=viewShd(self.username)
         if(self.get.getusers()):
             self.view=SusrView(self.username)
@@ -188,6 +228,8 @@ class MainWindow(QMainWindow):
         else:
             self.noUsr=Msg("No Passwords shared").exec_()
     def gen_pwd(self):
+        """Auto-Generation of Password for Personal Password
+        """
         self.pwdgen=genpwd()
         self.ui.per_password.setText(self.pwdgen)
     def gen_pwd2(self):
@@ -197,6 +239,13 @@ class MainWindow(QMainWindow):
         self.pwdgen=genpwd()
         self.ui.bank_pwd.setText(self.pwdgen)
     def getItem(self):
+        """Drop Down List for Account/Service Selection.Used in Personal Password Storing
+           If Unselected (Select) returns False
+           If Other Account(Other) selected opens dialog to get name of the new account
+           If Service/account selected returns the item that was selected
+        Returns:
+            String/Bool : Returns String if account has been selected else returns False
+        """
         self.content = self.ui.AccSelect_2.currentText()
         if(self.content=="Other"):
 #text, ok = QInputDialog.getText(self, 'Input Dialog', 'Enter text:')
@@ -209,6 +258,12 @@ class MainWindow(QMainWindow):
             return self.content
 
     def getItem2(self):
+        """Drop Down List for Account/Service Selection.Used for Sharing Passwords
+           If Unselected (Select) returns False
+           If Service/account selected returns the item that was selected
+        Returns:
+            String/Bool : Returns String if account has been selected else returns False
+        """
         self.content = self.ui.AccSelect.currentText()
         if(self.content=="Select"):
             return False
@@ -216,6 +271,10 @@ class MainWindow(QMainWindow):
             return self.content
             
     def AccSelectAdd(self):
+        """ Used for initializing the 2 drop down lists with services already exisiting in the database
+            For the personal passwords dropdownlist all services existing in db are shown
+            For the shared passwords only those services which user has a password for are shown in the dropdownlist
+        """
         self.ui.AccSelect.clear()
         self.ui.AccSelect_2.clear()
         self.ui.AccSelect.addItem("Select")

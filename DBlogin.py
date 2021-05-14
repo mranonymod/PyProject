@@ -4,7 +4,7 @@ class getdbpwd:
     def __init__(self,username,password):
         self.username = username
         self.password = password
-    def check(self):
+    def check(self):    
         self.db=mydb
         self.cur=self.db.cursor()
         check=(self.username,self.password)

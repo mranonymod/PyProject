@@ -20,7 +20,6 @@ class db1:
             self.cur2.execute('''DELETE FROM Passwords WHERE Service = %s AND Username = %s''',(self.service,self.username))
             self.db.commit()
             self.id2=self.cur2.rowcount
-            ic(self.id2)
             return self.id2
         else:
             return False

@@ -60,7 +60,6 @@ class db:
             self.db.commit()
             return True
         else:
-            ic()
             return False
         self.db.close()
     
