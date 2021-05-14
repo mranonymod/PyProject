@@ -9,8 +9,9 @@ from DBViewPwd import viewPers
 from DBdelpwd import db1
 from DialogMsg import Msg
 from autologin import *
-
+import datetime
 from encrypt import *
+from datetime import timedelta
 
 Ui_Table,baseClass=uic.loadUiType('UI/personalviewpwd.ui')
 
@@ -36,7 +37,11 @@ class PpwdView(baseClass):
                 if(y==2):
                     self.ui.Pwd_table.setItem(x,1,QTableWidgetItem(self.get.find()[x][y]))
                 elif(y==6):
-                    date=(self.get.find()[x][y]).strftime("%m-%d-%Y, %H:%M:%S")
+                    today = datetime.date.today()
+                    expire = 6*28
+                    date=(self.get.find()[x][y])
+                    date+=timedelta(days=expire)
+                    date=date.strftime("%m-%d-%Y, %H:%M:%S")
                     self.ui.Pwd_table.setItem(x,3,QTableWidgetItem(date))
                 elif(y==5):
                     ek=self.get.find()[x][y]

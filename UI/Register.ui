@@ -236,7 +236,7 @@ font-size:18px;
       <string>Confirm Password</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="NameText">
+    <widget class="QLineEdit" name="EmailText">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -249,7 +249,7 @@ font-size:18px;
       <string/>
      </property>
      <property name="placeholderText">
-      <string>Name</string>
+      <string>Email</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -270,7 +270,7 @@ font-size:18px;
       </font>
      </property>
      <property name="text">
-      <string>Name</string>
+      <string>Email</string>
      </property>
     </widget>
    </widget>

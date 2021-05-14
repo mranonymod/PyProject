@@ -25,20 +25,22 @@ class Register(baseClass):
         
         #code end
     def verify(self):
-        if self.ui.NameText.text() and self.ui.UsernameText.text() and self.ui.PasswordText.text() and self.ui.ConfirmPasswordText.text() != "" :
+        if self.ui.UsernameText.text() and self.ui.EmailText.text() and self.ui.PasswordText.text() and self.ui.ConfirmPasswordText.text() != "" :
             if self.ui.PasswordText.text() == self.ui.ConfirmPasswordText.text():
-                if password_check(self.ui.PasswordText.text()):
-                    email=self.ui.UsernameText.text()+"@gmail.com"
-                    password=hashit(self.ui.PasswordText.text())
-                    self.i=Reg(self.ui.UsernameText.text(),self.ui.NameText.text(),email,password)
-                    if(self.i.insert()):
-                        self.success=Msg("Registration successful").exec_()
-                        self.sw.emit()
+                if(email_check(self.ui.EmailText.text())):
+                    if password_check(self.ui.PasswordText.text()):
+                        password=hashit(self.ui.PasswordText.text())
+                        self.i=Reg(self.ui.UsernameText.text(),self.ui.NameText.text(),email,password)
+                        if(self.i.insert()):
+                            self.success=Msg("Registration successful").exec_()
+                            self.sw.emit()
+                        else:
+                            self.failed=Msg("Username already in use").exec_()
+                        
                     else:
-                        self.failed=Msg("Username already in use").exec_()
-                    
+                        self.passdet=Error2().exec_()
                 else:
-                    self.passdet=Error2().exec_()
+                    Msg("Enter valid email address").exec_()
             else:
                 self.cnfpass=Msg("Passwords do not match").exec_()
         else:

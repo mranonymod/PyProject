@@ -102,8 +102,13 @@ class db:
         self.result=self.cur.fetchall()[0][0]
         return self.result
         self.db.close()
+    def emget(self):
+        self.cure=self.db.cursor()
+        self.cure.execute('''SELECT Email FROM Users WHERE Username = %s''',(self.username,))
+        self.em=self.cure.fetchone()[0]
+        return self.em
 
 # extract , is not an error (TUPLES ARE PASSED AS ARGUMENTS)
 #[m][n] to get a specific cell from fetched data
 '''A=db("bruh")
-print(A.check("WIFI"))'''
+print(A.emget())'''

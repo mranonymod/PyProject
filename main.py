@@ -13,15 +13,19 @@ from PyQt5.uic import loadUi
 from ui_main_menu import Ui_MainWindow
 from DialogMsg import Msg
 from DialogPwd import Error2
+from DialogGetOTP import Otp
 from DialogGetAcc import Other
 from UiViewPwdPers import PpwdView
 from UiViewPwdSha import SpwdView
 from UiViewSharedUsers import SusrView
+from UiViewBnkPwd import BusrView
 # IMPORT FUNCTIONS'
+from Email import *
 from qrdet import *
 from ui_functions import *
 from DBaddpasswords import *
 from DBAddShdU import *
+from DBbanking import *
 from encrypt import AESCipher
 from validator import *
 from DBViewPwd import *
@@ -56,6 +60,8 @@ class MainWindow(QMainWindow):
         self.ui.ViewUsers.clicked.connect(self.viewUsers)
         self.ui.another_pwd.clicked.connect(self.gen_pwd)
         self.ui.another_pwd_3.clicked.connect(self.gen_pwd3)
+        self.ui.Enter_3.clicked.connect(self.checkB)
+        self.ui.view_pwd_3.clicked.connect(self.viewB)
         self.ui.qr_2.clicked.connect(self.qrcheck)
         self.AccSelectAdd()
         self.ui.Signout.clicked.connect(lambda : self.lw.emit())
@@ -236,8 +242,54 @@ class MainWindow(QMainWindow):
         self.pwdgen=genpwd()
         self.ui.sha_password.setText(self.pwdgen)
     def gen_pwd3(self):
-        self.pwdgen=genpwd()
-        self.ui.bank_pwd.setText(self.pwdgen)
+        self.pwd1=genpwd()
+        self.pwd2=genpwd()
+        self.ui.Lgnpwd.setText(self.pwd1)
+        self.ui.Txnpwd.setText(self.pwd2)
+    def add3(self):
+        """ Stores Bankinh Password in the database
+        """
+        self.CustID=self.ui.CustID.text()
+        self.LPwd=self.encrypt(self.ui.Lgnpwd.text())
+        self.TPwd=self.encrypt(self.ui.Txnpwd.text())
+        self.service=self.ui.Service3.text()
+        self.bdb=bdb(self.username)
+        if(self.bdb.add(self.service,self.CustID,self.LPwd,self.TPwd)):
+            self.ui.Lgnpwd.clear()
+            self.ui.Txnpwd.clear()
+            self.ui.Service3.clear()
+            self.ui.CustID.clear()
+            self.success=Msg("Password Stored").exec_()
+        else:
+            self.failed=Msg("Service already exists").exec_()
+    def checkB(self):
+        if(self.ui.Lgnpwd.text() and self.ui.Txnpwd.text() and self.ui.Service3.text() and self.ui.CustID.text() != ""):
+            if(password_check(self.ui.Lgnpwd.text()) and password_check(self.ui.Txnpwd.text())):
+                if(self.ui.checkBox_3.checkState()):
+                    self.add3()
+                else:
+                    self.check=Msg("Check The Box").exec_()
+            else:
+                self.pError=Error2().exec_()
+        else:
+            self.fill=Msg("Fill all the Details").exec_()
+    def viewB(self):
+        otps=genpwd()
+        emget=db(self.username)
+        em=emget.emget()
+        send=Email(otps,em)
+        send.send_mail()
+        self.otpi, ok = Otp.getOtp(self)
+        if(self.otpi==otps):
+            self.get=bdb(self.username)
+            if(self.get.view1()):
+                self.view=BusrView(self.username)
+                self.view.show()
+            else:
+                self.noUsr=Msg("No Passwords registered").exec_()
+        else:
+            Msg("Invalid OTP").exec_()
+
     def getItem(self):
         """Drop Down List for Account/Service Selection.Used in Personal Password Storing
            If Unselected (Select) returns False
