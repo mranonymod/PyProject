@@ -63,9 +63,8 @@ class PpwdView(baseClass):
         else:
             Msg("Select an Account").exec_()
     def delete(self):
-        self.user=self.ui.Pwd_table.item(self.row,1).text()
         self.serv=self.ui.Pwd_table.item(self.row,0).text()
-        self.delt=db1(self.user,self.serv)
+        self.delt=db1(self.username,self.serv)
         if(self.delt.delete()):
             self.suc=Msg("Deletion complete").exec_()
             for i in range(4):
