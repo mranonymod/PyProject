@@ -263,16 +263,28 @@ class MainWindow(QMainWindow):
         else:
             self.failed=Msg("Service already exists").exec_()
     def checkB(self):
-        if(self.ui.Lgnpwd.text() and self.ui.Txnpwd.text() and self.ui.Service3.text() and self.ui.CustID.text() != ""):
-            if(password_check(self.ui.Lgnpwd.text()) and password_check(self.ui.Txnpwd.text())):
-                if(self.ui.checkBox_3.checkState()):
-                    self.add3()
+        if(self.ui.Txnpwd.text()==""):
+            if(self.ui.Lgnpwd.text() and self.ui.Service3.text() and self.ui.CustID.text() != ""):
+                if(password_check(self.ui.Lgnpwd.text())):
+                    if(self.ui.checkBox_3.checkState()):
+                        self.add3()
+                    else:
+                        self.check=Msg("Check The Box").exec_()
                 else:
-                    self.check=Msg("Check The Box").exec_()
+                    self.pError=Error2().exec_()
             else:
-                self.pError=Error2().exec_()
+                self.fill=Msg("Fill all the Details").exec_()
         else:
-            self.fill=Msg("Fill all the Details").exec_()
+            if(self.ui.Lgnpwd.text() and self.ui.Service3.text() and self.ui.CustID.text() != ""):
+                if(password_check(self.ui.Lgnpwd.text()) and password_check(self.ui.Txnpwd.text())):
+                    if(self.ui.checkBox_3.checkState()):
+                        self.add3()
+                    else:
+                        self.check=Msg("Check The Box").exec_()
+                else:
+                    self.pError=Error2().exec_()
+            else:
+                self.fill=Msg("Fill all the Details").exec_()
     def viewB(self):
         otps=genpwd()
         emget=db(self.username)

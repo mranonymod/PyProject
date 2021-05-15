@@ -47,7 +47,7 @@ INSERT INTO Users values ('Yash18@','mryash018@gmail.com','5014cf14bc63c47d74306
 INSERT INTO Users values('Eren7@','eren@gmail.com','0f26fc7f966c6e83fc7424fef46ec96ea37a3503edc5bf52c379aaf374720436');
 INSERT INTO Users values ('bruh','pjn7190@gmail.com','408f31d86c6bf4a8aff4ea682ad002278f8cb39dc5f37b53d343e63a61f3cc4f');
 INSERT INTO ServicesR(Services,Website,LogP,EmailI,PasswordI,SignB) values ('NETFLIX','https://www.netflix.com','/html/body/div[1]/div/div/div/div/div/div[1]/div/a','/html/body/div[1]/div/div[3]/div/div/div[1]/form/div[1]/div/div/label/input','/html/body/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div/div/label/input','/html/body/div[1]/div/div[3]/div/div/div[1]/form/button');
-INSERT INTO ServicesR(Services,Website,LogP,EmailI,PasswordI,SignB) values ('Khan Academy','https://www.khanacademy.org/','//*[@id="signin-options"]/div/div[1]/a[1]','//*[@id="ap_email"]',' //*[@id="ap_password"]','//*[@id="signInSubmit"]');
+INSERT INTO ServicesR(Services,Website,LogP,EmailI,PasswordI,SignB) values ('Khan Academy','https://www.khanacademy.org/','//*[@id="login-or-signup"]','//*[@id="uid-identity-text-field-0-email-or-username"] ',' //*[@id="uid-identity-text-field-1-password"]','//*[@id="app-shell-root"]/div/div[3]/div/div[3]/section[2]/div/div/form/button');
 INSERT INTO ServicesR(Services) values ('DISNEY+');
 INSERT INTO ServicesR(Services) values ('WIFI');
 INSERT INTO Passwords(Username,AccUserName,Service,SharedID,Passwords) values ('bruh','bruh','WIFI','63hWc7S#Te3v6iU4v','T2hNDPX8VUxdojDhoVxFsGmYyrFaqOjRDpA41KP6Ldo=');
