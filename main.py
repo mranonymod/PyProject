@@ -2,10 +2,10 @@ import sys
 import platform
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QCoreApplication, QPropertyAnimation,pyqtSignal
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow,QFileDialog
 from PyQt5.QtWidgets import QLabel,QInputDialog,QTableWidget
 from qrcode import *
-
+import shutil
 from PyQt5 import uic
 from PyQt5.uic import loadUi
 
@@ -166,17 +166,28 @@ class MainWindow(QMainWindow):
         self.service=self.getItem2()
         self.qr1=shd()
         self.sid=self.qr1.qr1(self.username,self.service)
-        genqr(self.sid)
+        file = QFileDialog()
+        fileloc = fileloc = file.getExistingDirectory(None,"Save to")
+        if(fileloc!=""):
+            genqr(self.sid,fileloc)
+            #shutil.move("QR\\myqr.png",fileloc)
         Msg("QR Generated").exec()
     def qrcheck(self):
         """ Scans QR Code to get your shared password
         """
-        self.shdid1=qrdet()
+        
         self.ad=shd()
-        if(self.ad.qrsh(self.shdid1,self.username)):
-            Msg("Password Added").exec()
+        file= QFileDialog()
+        filepath = file.getOpenFileName(None,"Open QR", "QR\\", "Image Files (*.png)")
+        if(filepath!=""):
+            self.shdid1=qrdet(filepath[0])
+            if(self.ad.qrsh(self.shdid1,self.username)):
+                Msg("Password Added").exec()
+            else:
+                Msg("Can't Share To Yourself").exec()
         else:
-            Msg("Can't Share To Yourself").exec()
+            Msg("Select QR Code").exec()
+
 
     def encrypt(self,str):
         """ Encrypts Personal password before storing it in the database.It uses the username and password of the user for the process
