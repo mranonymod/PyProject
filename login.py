@@ -22,7 +22,6 @@ class Start(baseClass):
         self.label=QtWidgets.QLabel('bruh')
         self.ui.LoginButton.clicked.connect(self.login)
         self.ui.RegisterButton.clicked.connect(self.register)
-        self.ui.GPButton.clicked.connect(self.gplogin)
         #code end
     def login(self):
         logincheck=getdbpwd(self.ui.UsernameText.text(),hashit(self.ui.PasswordText.text())).check()
