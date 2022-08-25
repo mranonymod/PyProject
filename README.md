@@ -34,4 +34,3 @@ pip install pyqrcode
 pip install pypng
 ```
 
-Project has been discontinued until further notice 
